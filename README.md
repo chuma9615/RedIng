@@ -1,1 +1,5 @@
- grupo-14
+# Grupo 14
+#### Integrantes
+* Domingo Ramirez
+* Federico Brunner
+* Francisco Larach
