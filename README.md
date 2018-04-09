@@ -1,6 +1,6 @@
 # README
 
-Este es el link de la app montada en heroku: https://ingsoftware14.herokuapp.com
+Este es el link de la app montada en heroku: https://grupo14.herokuapp.com/
 
 
 
