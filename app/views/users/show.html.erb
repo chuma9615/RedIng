@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>RED-ING</title>
+  <title>REDDING</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -12,24 +11,20 @@
 </head>
 <body>
 
-<div class="jumbotron text-center">
-  <h1>Bienvenido a REDDING</h1>
-  <p>Esto no es reddit, pero casi</p>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-
+  <br>
+<center>
+  <div class="card" style="width:400px">
+    <div class="card-body">
+      <h4 class="card-title"> <%= @user.first_name %> <%= @user.last_name %></h4>
+      <h5 class="card-title">Año de nacimiento: <%= @user.born_year %> </h5>
+      <h5 class="card-title">Mail: <%= @user.email %> </h5>
+      <!--  aca va el codigo de edit -->
     </div>
-    <div class="col-sm-4">
-      <center><img src="https://i.redd.it/4qezgmi0x87z.png" height="420" width="420"></img></center>
-    </div>
-    <div class="col-sm-4">
-
-    </div>
+    <img class="card-img-bottom" src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt="Card image" style="width:100%">
   </div>
 </div>
+</center>
 
 </body>
 </html>
