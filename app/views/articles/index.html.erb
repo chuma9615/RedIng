@@ -19,6 +19,7 @@
         <td><%= article.title %></td>
         <td><%= article.op %></td>
         <td><%= article.body %></td>
+        <td><%= link_to 'Show', forum_article_path(@forum, article) %></td>
       </tr>
     <% end %>
   </tbody>

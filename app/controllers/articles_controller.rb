@@ -6,14 +6,20 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
+
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def index
     @articles = @forum.articles.all
   end
+
   def create
     @article = Article.new(article_params)
     respond_to do |format|
       if @article.save
-        format.html {redirect_to forum_article_path(@forum, @article), notice: 'El articulo se ha creado.' }
+        format.html {redirect_to forums_path }
       else
         format.html { render :new }
       end
@@ -22,11 +28,11 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :op)
+      params.require(:article).permit(:title, :body, :op, :forum_id)
     end
 
     def set_forum_article
-      @article = @forum.article.find_by!(id: params[:id]) if @forum
+      @article = @forum.articles.find_by!(id: params[:id]) if @forum
     end
 
     def set_forum
