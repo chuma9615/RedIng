@@ -3,30 +3,29 @@
 <html lang="en">
 <head>
   <title>RED-ING</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        
+
       </div>
       <div class="col-sm-4">
 
         <center>
         <%= form_for(@user) do |f| %>
-          <%= f.text_field :first_name, :placeholder => "Nombre" %>
-          <%= f.text_field :last_name, :placeholder => "Apellido" %>
-          <%= f.text_field :born_year, :placeholder => "Año de Nacimiento" %>
-          <%= f.email_field :email, :placeholder => "Email" %>
-          <%= f.password_field :password, :placeholder => "Contraseña" %>
-          <%= f.submit "Listo", class: "btn-submit" %>
+            <br>
+            <br>
+            <br>
+            <br>
+          <%= f.text_field :first_name, :placeholder => "Nombre" %><br><br>
+          <%= f.text_field :last_name, :placeholder => "Apellido" %><br><br>
+          <%= f.text_field :born_year, :placeholder => "Año de Nacimiento" %><br><br>
+          <%= f.email_field :email, :placeholder => "Email" %><br><br>
+          <%= f.password_field :password, :placeholder => "Contraseña" %><br><br><br>
+          <%= f.submit "Listo", class: "btn btn-primary" %>
         <% end %>
       </center>
 

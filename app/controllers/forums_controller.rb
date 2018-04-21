@@ -1,12 +1,17 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: %i[show edit update destroy]
+  before_action :require_user, only: [:show, :index, :new, :create]
 
   def new
     @forum = Forum.new
   end
 
   def index
-    @forums = Forum.all
+    if params[:search]
+      @forums = Forum.where(['name LIKE ?',"%#{params[:search]}%"])
+    else
+      @forums = Forum.all
+    end
   end
 
   def show
@@ -25,7 +30,7 @@ class ForumsController < ApplicationController
   end
 
   private
-  
+
     def forum_params
       params.require(:forum).permit(:name, :description)
     end

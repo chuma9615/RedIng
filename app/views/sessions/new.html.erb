@@ -13,12 +13,12 @@
 <div class="login">
 	<div class="container">
 		<div class="form">
-
+      <center>
       <h1>Ingresar</h1>
       <%= form_for(:session, url: login_path) do |f| %>
-        <%= f.email_field :email, :placeholder => "Email" %>
-        <%= f.password_field :password, :placeholder => "Contraseña" %>
-        <%= f.submit "Ingresar", class: "btn-submit" %>
+        <%= f.email_field :email, :placeholder => "Email" %><br><br>
+        <%= f.password_field :password, :placeholder => "Contraseña" %><br><br><br>
+        <%= f.submit "Ingresar", class: "btn btn-primary" %>
 				<% if flash[:error] %>
 				<br>
 				<br>
@@ -28,7 +28,7 @@
 					  <strong>Cuidado!</strong> <%= flash[:error] %></div>
 			<% end %>
       <% end %>
-
+    </center>
     </div>
 	</div>
 </div>
