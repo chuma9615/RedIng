@@ -1,0 +1,30 @@
+<%= form_with(model: [forum, article], local: true) do |form| %>
+  <% if article.errors.any? %>
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+  <div class="field">
+    <%= form.label :op %>
+    <%= form.text_field :op %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :forum_id, value: @forum.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
