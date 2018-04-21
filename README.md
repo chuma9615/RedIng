@@ -2,6 +2,8 @@
 
 Este es el link de la app montada en heroku: https://grupo14.herokuapp.com/
 
+Link trello https://trello.com/b/aVVa59tA/g14-software
+
 
 
 ------------------
