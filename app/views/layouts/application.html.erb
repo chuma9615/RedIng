@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
   </head>
   <body>
   <!-- Para lo de iniciar sesion y log in arriba-->
@@ -22,6 +23,11 @@
             <li><%= link_to "INGRESAR", login_path %></a></li>
             <li><%= link_to "REGISTRARTE", signup_path %></a></li>
           </ul>
+        <% end %>
+        <% if current_user %>
+        <ul>
+        <li><%= link_to "VER FOROS", forums_path %></li>
+        </ul>
         <% end %>
       </div>
 
