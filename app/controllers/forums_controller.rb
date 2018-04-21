@@ -7,7 +7,11 @@ class ForumsController < ApplicationController
   end
 
   def index
-    @forums = Forum.all
+    if params[:search]
+      @forums = Forum.where(['name LIKE ?',"%#{params[:search]}%"])
+    else
+      @forums = Forum.all
+    end
   end
 
   def show

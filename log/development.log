@@ -5648,3 +5648,1752 @@ Processing by ForumsController#index as HTML
 Completed 200 OK in 306ms (Views: 282.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:19:59 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1324ms (Views: 1284.1ms | ActiveRecord: 16.0ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:20:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tg+r7164eX+FBKQeaHx3ojIuA2kA5Zgepzm/vkwWNgYL/XJiMU+i94Rkql2VdWA46z/uuFMGjumjKIPfe4zoPw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:20:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 359ms (Views: 343.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:20:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 312ms (Views: 294.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:20:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s6loJnti0tM1PG9Z6C3sXEffL6CldwjRWmTl6L+QaCPw97++3VV4sW/kr9KYSpm0nkq6V+YrswEArJcgWoATaQ==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 118ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:20:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 402ms (Views: 378.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:20:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (2.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 374ms (Views: 293.0ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:22:52 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (1.0ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 420ms (Views: 309.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:22:57 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 257ms (Views: 225.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:23:49 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 315ms (Views: 294.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:23:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 326ms (Views: 304.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:23:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TSO0YYznmu7q9ATMDeM0ob18hMqbjoB6YwAfMwCicXjw0W3s4xBBZuuUCo/w6iM7ZG1pG8htlo1nESNSNzivQQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:23:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 284ms (Views: 267.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:24:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 308ms (Views: 290.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:24:47 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:24:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 70ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:25:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JtWLDoEdrTM3agL7pfSBEH4hGtKsKZMz0o6mbT+eQLxli1yWJyoHUW2ywnDVk/T4p7SPJe91KOOIRtSl2o479g==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 82ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:25:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 89ms (Views: 62.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:25:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 75ms (Views: 50.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/logout" for 172.19.0.1 at 2018-04-21 21:25:13 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:25:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:25:38 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 252ms (Views: 233.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:25:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AF9YPOsPXfBAq9V+T+tsmOlhyUjJ7UJxf93BNfHisqu9rYGxhPiGeEHL2z2y4nsCMHAkmZoOVIZ7zP1Uxnhskg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:25:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 209ms (Views: 200.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:25:52 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 313ms (Views: 286.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:26:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 278ms (Views: 262.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:26:23 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 256ms (Views: 240.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:26:24 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 266ms (Views: 250.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:26:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 215ms (Views: 196.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:26:36 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZAZuaiO2Hbv5YanWHmVPOOIxCmv6nk+6t0+t1oZAfwonWLnyhYG32aO5aV1uAjrQO6SfnLnC9Grth98eY1AEQA==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 81ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:26:36 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 411ms (Views: 392.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:26:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 237.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:26:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 287ms (Views: 257.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:26:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 260ms (Views: 232.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-04-21 21:26:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 239ms (Views: 204.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:26:47 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 260ms (Views: 236.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:27:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 264ms (Views: 241.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:27:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 221ms (Views: 200.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:27:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5EOAPoFbuyui2/3anGl294Ux7+/EtgJSu0LvgoPyQghZsVmz7qxgo6O785lhYGFtXCACPpdVFKW/U9PjtGicMQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:27:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 226ms (Views: 209.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:27:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 209ms (Views: 189.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:27:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mr+wGMmOO832W/HQpOyuReDx6zSc6JImuImq36aCdITZ4WeAb7mRr6yDMVvUi9utOWR+w9+0KfbiQdgXQ5IPzg==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 83ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:27:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 232ms (Views: 202.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:27:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"prUaPZw2fTpyZz4GFOTbEpksEslkRlvja89w+WfFJ8kbR8Ow88GmsnMHMEXp7cyIQD3/GDelTRRv3kyYUF/58A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:27:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 150ms (Views: 139.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:27:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 173ms (Views: 159.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:27:45 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KnMRwHKcf9fo7k616CBqi6TXoPI+Dj1uPzb7m3BN8YFpLcZY1KvVtbI2jj6YRx9jfUI1BX1Shr5l/olTlV2Kyw==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 80ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:27:45 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 180ms (Views: 163.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:27:56 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mJukdDsIDGP65jODTrC337OhYn9E9NHLWSBfpKxa2M0laX35VP/X6/uGPcCzuaBFarCPrhcXxzxdMWPFm8AG9A==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:27:57 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 214ms (Views: 198.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:28:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"riweafXGXoXxm1M1508reuKKMqJjRgj6L0fKC2dIRSQT3sfkmjGFDfD7XXYaRjzgO5vfczClHg0rVvZqUNKbHQ==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 82ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:28:05 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 191ms (Views: 168.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:28:08 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 233ms (Views: 202.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:28:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 212ms (Views: 181.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-04-21 21:28:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 262ms (Views: 222.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/forums/1" for 172.19.0.1 at 2018-04-21 21:28:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mForum Load (1.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.0ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 206ms (Views: 166.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:28:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 217ms (Views: 186.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:29:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 227ms (Views: 200.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:29:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 190ms (Views: 170.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:29:14 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 229ms (Views: 203.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:29:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 216ms (Views: 192.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:29:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RmFRvLtjjnjaojr0dlcX1IILiR7Rz5BB5u4Xvc4DLyT7k4gx1JRV8NvCNLeLXgBOWxpkz4Ishrbi/yvc+ZnxHQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:29:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 142ms (Views: 132.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:29:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 172ms (Views: 153.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:30:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:30:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 239ms (Views: 217.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:31:56 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 212ms (Views: 191.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:32:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 213ms (Views: 197.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:35:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 242ms (Views: 220.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:35:38 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 180ms (Views: 164.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:35:45 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 188ms (Views: 171.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:36:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 236ms (Views: 215.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:36:42 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 282ms (Views: 261.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:36:47 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 183ms (Views: 164.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:37:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 171ms (Views: 161.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:37:42 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 157ms (Views: 134.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:37:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeZW/4JOojVVHP0B5MvAwu2J26fQNMozz/WQBao7XlmKuIFnJHkIVw/EPYqUrLUqNBxOUJNoceOVPeLNTyslEw==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 77ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:37:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 242ms (Views: 215.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:38:12 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 188ms (Views: 171.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:38:49 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 226ms (Views: 204.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:39:10 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 211ms (Views: 192.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:39:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 233ms (Views: 212.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:39:59 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 165ms (Views: 148.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:40:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vzMgiKk3OXulE+uAZ1RkibVRTWyetUf08HOJm7wuiGQCwfkFxsDi86Rz5cOaXXMTbECgvc1WUQP0YrX6i7RWXQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:40:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 188ms (Views: 170.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:40:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 159ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:40:14 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ZYdz8BaO18XU+VNQQJSne6BNhgkcLibjbN39j4uh5C2yMpXZm2RPU2LJcYxZSd1NxSj72csA0vXewU+2z782g==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 81ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:40:14 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 179ms (Views: 162.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:40:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 211ms (Views: 190.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:40:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 265ms (Views: 232.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 21:40:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (28.5ms)
+  Rendered articles/new.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 249ms (Views: 218.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:40:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 213ms (Views: 185.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:40:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 200ms (Views: 174.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-04-21 21:40:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 194ms (Views: 161.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forums/1" for 172.19.0.1 at 2018-04-21 21:40:31 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 225ms (Views: 194.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:40:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (1.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 229ms (Views: 197.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 21:40:34 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.9ms)
+  Rendered articles/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 274ms (Views: 234.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 21:40:36 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.9ms)
+  Rendered articles/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 221ms (Views: 193.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:40:37 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 237ms (Views: 202.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:40:40 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 200ms (Views: 178.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:40:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 185ms (Views: 160.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:41:26 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 192ms (Views: 170.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:41:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 181.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:41:58 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 219ms (Views: 198.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:43:47 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 184ms (Views: 165.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:44:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 203.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:44:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 232.8ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:44:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2u/IVqzITrkqOYYzimdYOnlTiJ6bDGWBzCBOinydUF9nHRHbwz+VMStZiHB3bk+goEJlT8jvc3bIMXLrSweOZg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:44:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 155ms (Views: 144.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:44:54 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 199ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:45:01 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m3bh1oNJ4p9B0VsUGvCY1A8S2VXCqGoO9sF/qSVSRVHYKDZOJX5I/RsJm59ql+081odMooH00d6sCQ1hwEI+Gw==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:45:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 239ms (Views: 215.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 21:45:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 188ms (Views: 168.5ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/users/1" for 172.19.0.1 at 2018-04-21 21:45:07 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"krC+BMv9YTe5d9+XNwe3hE5BWLfvKHLSw7Iw6e4cyzSYZrbZJKt2DWQQJN/UcDz97SAU6udvMmIXSCOfUR6TFQ==", "user"=>{"first_name"=>"Francisco", "last_name"=>"Larach", "born_year"=>"1996", "email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Listo", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 13ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:45:07 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 198ms (Views: 179.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 21:45:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z6g0f/M9MbxxiMFquDZUCS8IA4alo8IizIpwAnfrNmFyWu3ynMrqNHDozylFP0OT9hnuV/ZA1NXIm0xjQHHoWA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 21:45:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 190ms (Views: 176.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:45:13 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 184ms (Views: 167.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:45:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 21:45:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 200ms (Views: 182.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 21:45:26 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ynfgJvztaGnNBZe1i2tS4iuidOVyWWg95sxLniMnutd3hTmrkxqz4cxlmfZ2YkV48rOZNCG6fsri3Xf/FL1k7g==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 83ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 21:45:26 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 201ms (Views: 178.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:45:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 228ms (Views: 206.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:45:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 228ms (Views: 202.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-04-21 21:45:31 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 195ms (Views: 166.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forums/1" for 172.19.0.1 at 2018-04-21 21:45:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.0ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 161ms (Views: 140.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:45:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (1.0ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 180ms (Views: 148.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:45:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.0ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 190ms (Views: 160.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-04-21 21:45:36 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/new.html.erb within layouts/application
+  Rendered forums/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 214ms (Views: 192.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 21:45:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 214ms (Views: 182.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 21:45:45 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.0ms)
+  Rendered articles/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 218ms (Views: 187.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:46:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 204ms (Views: 181.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-04-21 21:46:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/new.html.erb within layouts/application
+  Rendered forums/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 198ms (Views: 178.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:48:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 169ms (Views: 143.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 21:52:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 339ms (Views: 223.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/forums?utf8=%E2%9C%93&search=Tercer+Foro" for 172.19.0.1 at 2018-04-21 21:53:01 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tercer Foro"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (8.4ms)[0m  [1m[34mSELECT "forums".* FROM "forums" WHERE (name LIKE '%Tercer Foro%')[0m
+  Rendered forums/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 293ms (Views: 262.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/forums?utf8=%E2%9C%93&search=Tercer+Foro" for 172.19.0.1 at 2018-04-21 21:58:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tercer Foro"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums" WHERE (name LIKE '%Tercer Foro%')[0m
+  Rendered forums/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 257ms (Views: 226.4ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 22:00:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FY3T1tUADd3ku8+rRTr5nSnbXkWbmvquIpoAg59V7yaofwpbuvfWVeXbwei4M+4H8MqzlMh57FkmizziqM8xHw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 22:00:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 412ms (Views: 395.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 22:00:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 220ms (Views: 202.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 22:00:46 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9QriEZPSxWnGK32mBbiLzkzl2lNax9mJYJC2J4Lmt7MivwQ4Hjhd/3AbX3ocZfH4KYCng43pLZ/SjAQexvhlA==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 87ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 22:00:46 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 223ms (Views: 204.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/edit" for 172.19.0.1 at 2018-04-21 22:00:49 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 225.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 22:00:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 199ms (Views: 176.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/forums/2/articles" for 172.19.0.1 at 2018-04-21 22:00:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 257ms (Views: 198.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-04-21 22:00:57 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 288ms (Views: 257.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-04-21 22:00:58 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 209ms (Views: 173.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:01:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/new.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 219ms (Views: 189.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:01:40 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.3ms)
+  Rendered articles/new.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/example/app/views/articles/_form.html.erb:51: syntax error, unexpected '=', expecting &. or :: or '[' or '.'
+...append=( form.submit , :class = "btn btn-primary");@output_b...
+...                              ^):
+  
+app/views/articles/_form.html.erb:51: syntax error, unexpected '=', expecting &. or :: or '[' or '.'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4281940223057477503_70188960559500'
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:01:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.0ms)
+  Rendered articles/new.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/example/app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+...append=( form.submit , :class="btn btn-primary");@output_buf...
+...                              ^):
+  
+app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4281940223057477503_70188895050760'
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:02:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.3ms)
+  Rendered articles/new.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/example/app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+...append=( form.submit , :class "btn btn-primary");@output_buf...
+...                              ^):
+  
+app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4281940223057477503_70189027398940'
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:02:03 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.0ms)
+  Rendered articles/new.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/example/app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+...append=( form.submit , :class "btn btn-primary");@output_buf...
+...                              ^):
+  
+app/views/articles/_form.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting &. or :: or '[' or '.'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4281940223057477503_70188927812740'
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:02:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (1.9ms)
+  Rendered articles/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 253ms (Views: 227.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/forums/1/articles" for 172.19.0.1 at 2018-04-21 22:02:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2qc2m/izQtmu3zeFrW1es0mhF7oc7UcYYt+thdTGjO1nVe8Wl0SZUa+/OcZQZEkpkLD6a08OUe9mzpHk41xS1A==", "article"=>{"title"=>"", "body"=>"", "op"=>"", "forum_id"=>"1"}, "commit"=>"Create Article", "forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "op", "forum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", ""], ["body", ""], ["op", ""], ["forum_id", 1], ["created_at", "2018-04-21 22:02:21.834789"], ["updated_at", "2018-04-21 22:02:21.834789"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums
+Completed 302 Found in 34ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 22:02:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.1ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 211ms (Views: 188.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:03:10 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.0ms)
+  Rendered articles/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 241ms (Views: 216.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:03:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.1ms)
+  Rendered articles/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 241ms (Views: 216.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-04-21 22:03:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.3ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.1ms)
+  Rendered articles/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 197ms (Views: 174.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 22:03:31 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 199ms (Views: 179.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-04-21 22:03:34 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/new.html.erb within layouts/application
+  Rendered forums/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 213ms (Views: 195.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 172.19.0.1 at 2018-04-21 22:03:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y/JyQJ2nwCvT8k0glbirZTYTv5V8gwHzn6GvHsnKClzeAKvN8lAbo9KSQ2Nosbz/7wJSRC9gFwSbsJN//lDUZQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.19.0.1 at 2018-04-21 22:03:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 209ms (Views: 193.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 172.19.0.1 at 2018-04-21 22:03:37 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 174ms (Views: 159.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 172.19.0.1 at 2018-04-21 22:04:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 207ms (Views: 189.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 22:04:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 196ms (Views: 177.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 22:04:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q2ReYsvwy7LR3NuB5loxbYFSf5XDWdBhE6GUB1hPgQYAOon6bcdh0IsEGwqWPUSFWMfqYoAFa7FJaebPvV/6TA==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 79ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 22:04:30 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 189ms (Views: 164.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-04-21 22:04:35 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 236.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-04-21 22:04:55 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNqH9Pj2kmz6wh8nbsEthzYO7gQKADmVELuwEFj4k8C1KF55lwFJ5PuiEWSTyDod7x8D1VnjL2IUqoxxb2JN+Q==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 79ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-04-21 22:04:55 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 192ms (Views: 176.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 22:04:59 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 212ms (Views: 191.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-04-21 22:05:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 186ms (Views: 166.6ms | ActiveRecord: 1.1ms)
+
+
