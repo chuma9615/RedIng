@@ -1,5 +1,5 @@
-
 Rails.application.routes.draw do
+
 
   get 'welcome/index'
   resources :articles
@@ -16,3 +16,12 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   
 end
+
+  root 'welcome#index'
+  resources :forums do
+    resources :articles do
+      resources :comments
+
+      end
+    end
+  end

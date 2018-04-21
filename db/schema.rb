@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180419174609) do
+
+ActiveRecord::Schema.define(version: 20180420150913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +25,28 @@ ActiveRecord::Schema.define(version: 20180419174609) do
     t.string "email"
     t.string "password_digest"
     t.string "born_year"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "op"
+    t.bigint "forum_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_articles_on_forum_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "op"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forums", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
