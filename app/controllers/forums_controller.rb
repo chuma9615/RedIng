@@ -1,4 +1,6 @@
 class ForumsController < ApplicationController
+  before_action :set_forum, only: %i[show edit update destroy]
+
   def new
     @forum = Forum.new
   end
@@ -23,7 +25,12 @@ class ForumsController < ApplicationController
   end
 
   private
+  
     def forum_params
       params.require(:forum).permit(:name, :description)
+    end
+
+    def set_forum
+      @forum = Forum.find(params[:id])
     end
 end
