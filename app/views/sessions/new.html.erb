@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>REDDING</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="login">
+	<div class="container">
+		<div class="form">
+
+      <h1>Ingresar</h1>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.email_field :email, :placeholder => "Email" %>
+        <%= f.password_field :password, :placeholder => "Contraseña" %>
+        <%= f.submit "Ingresar", class: "btn-submit" %>
+				<% if flash[:error] %>
+				<br>
+				<br>
+				<br>
+				<div class="alert alert-danger">
+
+					  <strong>Cuidado!</strong> <%= flash[:error] %></div>
+			<% end %>
+      <% end %>
+
+    </div>
+	</div>
+</div>
+</body>
