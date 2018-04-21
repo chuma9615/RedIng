@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articulos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>OP</th>
+      <th>Contenido</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.op %></td>
+        <td><%= article.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Articulo', new_forum_article_path %>
+
+<%= link_to 'Back to forum', forums_path %>

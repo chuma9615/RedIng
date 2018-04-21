@@ -1,0 +1,13 @@
+<p>
+  <strong>Titulo:</strong>
+  <%= @forum.name %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @forum.description %>
+</p>
+
+
+
+<%= link_to "Articulos", forum_articles_path(@forum) %>

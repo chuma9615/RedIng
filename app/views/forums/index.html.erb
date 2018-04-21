@@ -1,0 +1,17 @@
+<h1>Todos los Foros</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Descripcion</th>
+    <th></th>
+  </tr>
+
+  <% @forums.each do |forum| %>
+    <tr>
+      <td><%= forum.name %></td>
+      <td><%= forum.description %></td>
+      <td><%= link_to 'Show', forum %></td>
+    </tr>
+  <% end %>
+</table>
