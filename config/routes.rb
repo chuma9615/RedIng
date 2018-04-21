@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
   
-end
 
   root 'welcome#index'
   resources :forums do
