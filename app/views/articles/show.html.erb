@@ -59,7 +59,30 @@
           <h4 class="card-title"><strong>Titulo:</strong><%= @article.title %></h4>
           <p class="card-text"><strong>Cuerpo:</strong><%= @article.body %></p>
           <p class="card-text"><strong>Creador:</strong><%= @article.op %></p>
-          <%= link_to "Volver a Foro", forum_path(@forum) %>
+          <%= link_to like_forum_article_path(@forum.id,@article) , class: "like", method: :put do %>
+          <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
+            <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+            <span > </span>
+            <span class="badge"> <%= @article.get_upvotes.size%> </span>
+            <span > </span>
+          </button>
+          <%end%>
+          <%= link_to dislike_forum_article_path(@forum.id,@article) , class: "dislike", method: :put do %>
+          <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
+            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+            <span > </span>
+            <span class="badge"> <%= @article.get_downvotes.size%> </span>
+            <span > </span>
+          </button>
+          <%end%>
+          <br>
+          <br>
+          <br>
+          <%= link_to forum_path(@forum) do %>
+          <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
+            <span >"Volver a Foro"</span>
+          </button>
+          <% end%>
         </div>
       </div>
     </center>

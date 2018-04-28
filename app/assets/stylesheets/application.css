@@ -208,4 +208,7 @@ html, body {
    .img-container {
      height: 200px;
    }
+   .like:hover{
+     text-decoration: none;
+   }
  }

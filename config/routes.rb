@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
-  resources :subscriptions
-
   root 'welcome#index'
   resources :forums do
     resources :articles do
@@ -24,4 +22,14 @@ Rails.application.routes.draw do
 
       end
     end
+
+  resources :forums do
+    resources :articles do
+      member do
+        put "like" => "articles#upvote"
+        put "dislike" => "articles#downvote"
+      end
+    end
   end
+
+end

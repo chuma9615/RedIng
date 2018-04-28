@@ -1,8 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_forum
-  before_action :set_forum_article, only: %i[show edit update destroy]
-
-  before_action :require_user, only: [:show, :index, :new, :create]
+  before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote]
+  before_action :set_forum_article, only: %i[show edit update destroy upvote downvote]
+  before_action :require_user, only: [:show, :index, :new, :create, :upvote, :downvote]
 
 
   def new
@@ -15,6 +14,16 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = @forum.articles.all
+  end
+
+  def upvote
+    @article.liked_by current_user
+    redirect_to  forum_article_path
+  end
+
+  def downvote
+    @article.disliked_by current_user
+    redirect_to forum_article_path
   end
 
   def create
