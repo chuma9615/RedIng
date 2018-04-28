@@ -1,5 +1,5 @@
 class Forum < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy
   has_many :comments, through: :articles
 
 

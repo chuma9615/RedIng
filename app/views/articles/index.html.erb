@@ -48,12 +48,12 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <br>
-      <%= link_to 'Nuevo Articulo', new_forum_article_path %>
+      <%= link_to 'Volver a todos los foros', forums_path() %>
 
     </div>
     <div class="col-sm-8 text-left">
     <center>
-    <h1>Articulos</h1>
+    <h1>Articulos del foro <%= @forum.name %></h1>
     </center>
     <% @articles.each do |article| %>
     <center>
@@ -71,7 +71,7 @@
     </div>
     <div class="col-sm-2 sidenav">
       <br>
-      <%= link_to 'Volver al Foro', forums_path %>
+      <%= link_to 'Nuevo Articulo', new_forum_article_path %>
     </div>
   </div>
 </div>
