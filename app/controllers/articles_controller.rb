@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote]
   before_action :set_forum_article, only: %i[show edit update destroy upvote downvote]
-  before_action :require_user, only: [:show, :index, :new, :create, :upvote, :downvote]
+  before_action :require_user, only: [:new, :create, :upvote, :downvote]
 
 
   def new

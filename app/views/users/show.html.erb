@@ -2,28 +2,60 @@
 <html lang="en">
 <head>
   <title>RED-ING</title>
-
 </head>
 <body>
 
 
   <br>
-<center>
-  <div class="card" style="width:400px">
-    <div class="card-body">
-      <h4 class="card-title"> <%= @user.first_name %> <%= @user.last_name %></h4>
-      <h5 class="card-title">Año de nacimiento: <%= @user.born_year %> </h5>
-      <h5 class="card-title">Mail: <%= @user.email %> </h5>
-      <% if current_user == @user %>
-        <p class="recipe-edit">
-          <%= link_to "Editar", edit_user_path(@user.id) %>
-        </p>
-      <% end %>
+
+  <div class="row">
+    <center>
+    <div class="col-sm-4">
+      <div class="card" style="width:400px">
+        <div class="card-body">
+          <img class="card-img-bottom" src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt="Card image" style="width:75%">
+          <h4 class="card-title"> <%= @user.first_name %> <%= @user.last_name %></h4>
+          <h5 class="card-title">Año de nacimiento: <%= @user.born_year %> </h5>
+          <h5 class="card-title">Mail: <%= @user.email %> </h5>
+          <h5 class="card-title">Likes: <%= @user.votes.up.size %> </h5>
+          <h5 class="card-title">Disikes: <%= @user.votes.down.size %> </h5>
+          <% if current_user == @user %>
+            <p class="recipe-edit">
+              <%= link_to "Editar", edit_user_path(@user.id) %>
+            </p>
+          <% end %>
+        </div>
+        </div>
     </div>
-    <img class="card-img-bottom" src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt="Card image" style="width:100%">
+  </center>
+    <div class="col-sm-8">
+
+      <% @user.find_voted_items.each do |vote| %>
+        <% if vote.is_a?(Article)%>
+          <% if @user.voted_up_on? vote %>
+            <div class="media border p-3">
+              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+              <div class="media-body">
+                <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                <p>Le gustó: <%= vote.title %></p>
+              </div>
+            </div>
+
+          <% elsif @user.voted_down_on? vote %>
+          <div class="media border p-3">
+
+            <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+            <div class="media-body">
+              <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+              <p>Le disgustó: <%= vote.title %></p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
   </div>
 </div>
-</center>
+
 
 </body>
 </html>
