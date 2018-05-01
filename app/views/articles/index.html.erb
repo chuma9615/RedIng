@@ -53,7 +53,9 @@
     </div>
     <div class="col-sm-8 text-left">
     <center>
-    <h1>Articulos del foro <%= @forum.name %></h1>
+    <h1>Foro: <%= @forum.name %></h1>
+    <h5>Descripción: <%= @forum.description %></h5>
+    <h3>Artículos: </h3>
     </center>
     <% @articles.each do |article| %>
     <center>
