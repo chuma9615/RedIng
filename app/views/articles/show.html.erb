@@ -57,13 +57,13 @@
       <div class= "card" style="width:400px">
         <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
         <div class="card-body">
-          <h4 class="card-title"><strong>Titulo:</strong><%= @article.title %></h4>
-          <p class="card-text"><strong>Cuerpo:</strong><%= @article.body %></p>
-          <p class="card-text"><strong>Creador:</strong><%= @article.op %></p>
+          <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
+          <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
+          <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
           <h4 class="card-title"><strong>Comentarios</h4>
           <%= link_to "Nuevo comentario", new_forum_article_comment_path(@forum, @article) %>
           <% @article.comments.each do |comment| %>
-            <p class="card-text"><strong><%= comment.op %>:</strong><%= comment.content %></p>
+            <p class="card-text"><strong><%= comment.op %>: </strong><%= comment.content %></p>
           <% end %>
         </div>
       </div>
