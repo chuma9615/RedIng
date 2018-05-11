@@ -25,6 +25,7 @@
               <br><br><br>
                 <%= f.text_field :name, :placeholder => "Nombre del Foro" %><br><br>
                 <%= f.text_area :description, :placeholder => "Cuentanos de que se trata" %><br><br><br>
+                <%= f.hidden_field :op, value: current_user.email %>
                 <%= f.submit "Listo", class: "btn btn-primary" %>
               <% end %>
 

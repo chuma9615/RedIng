@@ -48,7 +48,16 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <br>
+<<<<<<< HEAD
       <%= link_to 'Volver a todos los foros', forums_path() %>
+=======
+      <%= link_to new_forum_article_path do %>
+      <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
+        <span >Nuevo Articulo</span>
+      </button>
+      <% end%>
+
+>>>>>>> Votes
 
     </div>
     <div class="col-sm-8 text-left">
@@ -73,7 +82,27 @@
     </div>
     <div class="col-sm-2 sidenav">
       <br>
+<<<<<<< HEAD
       <%= link_to 'Nuevo Articulo', new_forum_article_path %>
+=======
+
+      <%= link_to forums_path do %>
+      <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
+        <span >Volver al Foro</span>
+      </button>
+      <% end%>
+
+      <% if current_user.email == @forum.op %>
+        <br>
+        <br>
+        <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+        <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+          <span >Eliminar Foro</span>
+        </button>
+        <% end%>
+      <% end%>
+
+>>>>>>> Votes
     </div>
   </div>
 </div>
