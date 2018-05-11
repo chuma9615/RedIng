@@ -33111,3 +33111,1115 @@ Completed 200 OK in 246ms (Views: 225.3ms | ActiveRecord: 2.0ms)
 >>>>>>> Votes
 
 
+Started GET "/" for 172.19.0.1 at 2018-05-11 21:12:58 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 2356ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/example/app/models/user.rb:6: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/example/app/models/user.rb:9: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/example/app/models/user.rb:12: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> Votes
+^~):
+  
+app/models/user.rb:6: syntax error, unexpected <<, expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ===, expecting keyword_end
+app/models/user.rb:12: syntax error, unexpected >>, expecting keyword_end
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___709458423606757804_47228339248980'
+Started GET "/" for 172.19.0.1 at 2018-05-11 21:13:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/example/app/models/user.rb:6: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/example/app/models/user.rb:9: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/example/app/models/user.rb:12: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> Votes
+^~):
+  
+app/models/user.rb:6: syntax error, unexpected <<, expecting keyword_end
+app/models/user.rb:9: syntax error, unexpected ===, expecting keyword_end
+app/models/user.rb:12: syntax error, unexpected >>, expecting keyword_end
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___709458423606757804_70107194970020'
+Started GET "/" for 172.19.0.1 at 2018-05-11 21:21:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1981ms (Views: 1939.8ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:21:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (0.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  Rendered users/show.html.erb within layouts/application (98.8ms)
+Completed 200 OK in 664ms (Views: 624.1ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:21:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.3ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 410ms (Views: 303.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-05-11 21:21:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/new.html.erb within layouts/application
+  Rendered forums/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 318ms (Views: 279.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/forums" for 172.19.0.1 at 2018-05-11 21:21:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JAMHROctwfi8fmj3lxYhQX23sOnBMPUP2ETOQVCpOmBafTOb2vnUPswpEdvQyJqkFv6lTf86YOgATTiJV0GpEw==", "forum"=>{"name"=>"Foro 1", "description"=>"Mi primer Foro\r\n", "op"=>"fjlarach@uc.cl"}, "commit"=>"Listo"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "forums" ("name", "op", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Foro 1"], ["op", "fjlarach@uc.cl"], ["description", "Mi primer Foro\r\n"], ["created_at", "2018-05-11 21:21:32.750569"], ["updated_at", "2018-05-11 21:21:32.750569"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/2
+Completed 302 Found in 29ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/forums/2" for 172.19.0.1 at 2018-05-11 21:21:32 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 469ms (Views: 431.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums/2/articles" for 172.19.0.1 at 2018-05-11 21:21:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (1.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 319ms (Views: 233.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:22:13 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 228.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/forums/2/articles" for 172.19.0.1 at 2018-05-11 21:22:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (2.2ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 359ms (Views: 312.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/forums/2/articles" for 172.19.0.1 at 2018-05-11 21:23:05 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 468ms (Views: 440.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/forums/2/articles/new" for 172.19.0.1 at 2018-05-11 21:23:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (52.1ms)
+  Rendered articles/new.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 509ms (Views: 436.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/forums/2/articles" for 172.19.0.1 at 2018-05-11 21:23:28 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pj5AKExvMe6EF4KabTw3tXqlCdn8clHeqpvcqVWjk4KVjsOW5maGiDARPWFA42WEWLoQIXYET3Hagf/aO0BgBA==", "article"=>{"title"=>"Articulo 1", "body"=>"Mi primer articulo", "op"=>"fjlarach@uc.cl", "forum_id"=>"2"}, "commit"=>"Create Article", "forum_id"=>"2"}
+  [1m[36mForum Load (1.2ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "op", "forum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Articulo 1"], ["body", "Mi primer articulo"], ["op", "fjlarach@uc.cl"], ["forum_id", 2], ["created_at", "2018-05-11 21:23:29.053757"], ["updated_at", "2018-05-11 21:23:29.053757"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/2/articles/1
+Completed 302 Found in 79ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/forums/2/articles/1" for 172.19.0.1 at 2018-05-11 21:23:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"2", "id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (91.2ms)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column comments.article_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."articl...
+                                                  ^
+: SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1):
+    62:           <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
+    63:           <h4 class="card-title"><strong>Comentarios</h4>
+    64:           <%= link_to "Nuevo comentario", new_forum_article_comment_path(@forum, @article) %>
+    65:           <% @article.comments.each do |comment| %>
+    66:             <p class="card-text"><strong><%= comment.op %>: </strong><%= comment.content %></p>
+    67:           <% end %>
+    68: 
+  
+app/views/articles/show.html.erb:65:in `_app_views_articles_show_html_erb___69466112184595841_70333996486060'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6732193170386258400)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6732193170386258400)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:26:21 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (2.8ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (78.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1578ms (Views: 1403.1ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/forums/2/articles" for 172.19.0.1 at 2018-05-11 21:26:26 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"2"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 2]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 624ms (Views: 457.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/forums/2/articles/1" for 172.19.0.1 at 2018-05-11 21:26:31 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"2", "id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (152.7ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column comments.article_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."articl...
+                                                  ^
+: SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1):
+    63:           <h4 class="card-title"><strong>Comentarios</h4>
+    64:           <%= link_to "Nuevo comentario", new_forum_article_comment_path(@forum, @article) %>
+    65: 
+    66:           <% @article.comments.each do |comment| %>
+    67:             <p class="card-text"><strong><%= comment.op %>: </strong><%= comment.content %></p>
+    68:           <% end %>
+    69: 
+  
+app/views/articles/show.html.erb:66:in `_app_views_articles_show_html_erb___1443022938209701302_69930121676060'
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (267.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "example_development"[0m
+  [1m[35m (186.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "example_test"[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6732193170386258400)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180419174609)
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "born_year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180419174609"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateForums (20180420150834)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "forums" ("id" bigserial primary key, "name" character varying, "op" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420150834"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArticles (20180420150900)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "body" text, "op" character varying, "forum_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_a0c918918d"
+FOREIGN KEY ("forum_id")
+  REFERENCES "forums" ("id")
+)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_articles_on_forum_id" ON "articles"  ("forum_id")[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420150900"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20180420150913)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "op" character varying, "content" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180420150913"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ActsAsVotableMigration (20180428190506)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial NOT NULL PRIMARY KEY, "votable_type" character varying, "votable_id" integer, "voter_type" character varying, "voter_id" integer, "vote_flag" boolean, "vote_scope" character varying, "vote_weight" integer, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes"  ("voter_id", "voter_type", "vote_scope")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes"  ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180428190506"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-11 21:27:39.740050"], ["updated_at", "2018-05-11 21:27:39.740050"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6732193170386258400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/forums/2/" for 172.19.0.1 at 2018-05-11 21:28:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mForum Load (1.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 131ms (ActiveRecord: 13.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Forum with 'id'=2):
+  
+app/controllers/forums_controller.rb:46:in `set_forum'
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:28:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.3ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (12.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1270ms (Views: 1207.9ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-05-11 21:28:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-05-11 21:28:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for 172.19.0.1 at 2018-05-11 21:28:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZEqxTL+wQjRiEbhJXHAp53pEB/Z7VwOLLFf+fXdABkCXM6B/2+vij8wuvCkndlO/2gfObSCkpS7Gorp8BKPqg==", "session"=>{"email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fjlarach@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 172.19.0.1 at 2018-05-11 21:28:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 420ms (Views: 390.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/signup" for 172.19.0.1 at 2018-05-11 21:28:36 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 468ms (Views: 408.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 172.19.0.1 at 2018-05-11 21:28:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZhpWkYtjBtFHvY3+rkaozMgSEC+paofJPnXcYgyRQVyn7oCNsHZ34EGojf6SjRVz8mC81G+UuVmghUaoV+JPQ==", "user"=>{"first_name"=>"Francisco", "last_name"=>"Larach", "born_year"=>"1996", "email"=>"fjlarach@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Crear Cuenta"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "born_year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Francisco"], ["last_name", "Larach"], ["email", "fjlarach@uc.cl"], ["password_digest", "$2a$10$7L0/yy7VKbXf7.1ARgkd7.EHZWFFbryu71si7FS4nWvvCOz2HTZn6"], ["born_year", "1996"], ["created_at", "2018-05-11 21:28:48.284097"], ["updated_at", "2018-05-11 21:28:48.284097"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 99ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:28:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (0.9ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  Rendered users/show.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 345ms (Views: 307.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:28:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.4ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 423ms (Views: 395.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forums/new" for 172.19.0.1 at 2018-05-11 21:28:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/new.html.erb within layouts/application
+  Rendered forums/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 412ms (Views: 371.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/forums" for 172.19.0.1 at 2018-05-11 21:29:00 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SQ2ktn8urS+ncKNeF0Hz1gLPpVa8HSNR+GJ573z6pwg3c5BpQvq46dcn2nJQn0gzaYaw8oIXtrYga48nexI0ew==", "forum"=>{"name"=>"Foro 1", "description"=>"Mi primer Foro", "op"=>"fjlarach@uc.cl"}, "commit"=>"Listo"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "forums" ("name", "op", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Foro 1"], ["op", "fjlarach@uc.cl"], ["description", "Mi primer Foro"], ["created_at", "2018-05-11 21:29:00.385510"], ["updated_at", "2018-05-11 21:29:00.385510"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1
+Completed 302 Found in 22ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/forums/1" for 172.19.0.1 at 2018-05-11 21:29:00 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 445ms (Views: 400.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:29:02 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 405ms (Views: 310.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-05-11 21:29:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (23.4ms)
+  Rendered articles/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 407ms (Views: 371.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:29:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SYWgNlcd1sl3/F9THRLhPO3dQruBvuVdjvtq3+zvpEKwzbh3cCZubJ7jiH+laAm2yVSzQWkf5DLDz4/lA4Weew==", "article"=>{"title"=>"Articulo 1", "body"=>"Mi primer articulo", "op"=>"fjlarach@uc.cl", "forum_id"=>"1"}, "commit"=>"Create Article", "forum_id"=>"1"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "op", "forum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Articulo 1"], ["body", "Mi primer articulo"], ["op", "fjlarach@uc.cl"], ["forum_id", 1], ["created_at", "2018-05-11 21:29:25.137620"], ["updated_at", "2018-05-11 21:29:25.137620"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/1
+Completed 302 Found in 45ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:29:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 459ms (Views: 410.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:30:55 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 253ms (Views: 213.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:31:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 417ms (Views: 380.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/forums/1/articles/1/comments/new" for 172.19.0.1 at 2018-05-11 21:31:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#new as HTML
+  Parameters: {"forum_id"=>"1", "article_id"=>"1"}
+  [1m[36mForum Load (1.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (5.4ms)
+  Rendered comments/new.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 490ms (Views: 429.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/forums/1/articles/1/comments" for 172.19.0.1 at 2018-05-11 21:31:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VQq5oOOBy5mjNqyN6hxUDVatxhMnmtIJ0Tpw8csaB5IfCVfhJCUGM+trLvDomSzzor2DQWTYsUCN7p+nepaiJA==", "comment"=>{"op"=>"fjlarach@uc.cl", "content"=>"Que buen foro!", "article_id"=>"1"}, "commit"=>"Create Comment", "forum_id"=>"1", "article_id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "comments" ("op", "content", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["op", "fjlarach@uc.cl"], ["content", "Que buen foro!"], ["article_id", 1], ["created_at", "2018-05-11 21:31:22.722868"], ["updated_at", "2018-05-11 21:31:22.722868"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/1
+Completed 302 Found in 48ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:31:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 435ms (Views: 384.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/forums/1/articles/1/comments/new" for 172.19.0.1 at 2018-05-11 21:31:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#new as HTML
+  Parameters: {"forum_id"=>"1", "article_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (3.2ms)
+  Rendered comments/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 452ms (Views: 411.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/forums/1/articles/1/comments" for 172.19.0.1 at 2018-05-11 21:31:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AbYf4jQniddFwrWGP3VC4I8iDGGinP/NJUst3G2fUvtLtfGj84NEfQ2fN/s98DoeezJJM+HenIR5n8KK3BP3TQ==", "comment"=>{"op"=>"fjlarach@uc.cl", "content"=>"no tan buen foro en verdad", "article_id"=>"1"}, "commit"=>"Create Comment", "forum_id"=>"1", "article_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("op", "content", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["op", "fjlarach@uc.cl"], ["content", "no tan buen foro en verdad"], ["article_id", 1], ["created_at", "2018-05-11 21:31:51.829280"], ["updated_at", "2018-05-11 21:31:51.829280"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/1
+Completed 302 Found in 37ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:31:51 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 541ms (Views: 475.4ms | ActiveRecord: 5.4ms)
+
+
+Started PUT "/forums/1/articles/1/dislike" for 172.19.0.1 at 2018-05-11 21:32:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#downvote as HTML
+  Parameters: {"authenticity_token"=>"agI55DxKXoKjSOXE1bEW6t80Po+QkSibPIPgn3NQCfPYvhLcoqAgmSpwAL38/xHvZ3hsYM2rbLfOgbc6JaIDTw==", "forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_type", "Article"], ["votable_id", 1], ["voter_type", "User"], ["voter_id", 1], ["vote_flag", "f"], ["vote_weight", 1], ["created_at", "2018-05-11 21:32:04.442948"], ["updated_at", "2018-05-11 21:32:04.442948"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/1
+Completed 302 Found in 65ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:32:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 485ms (Views: 433.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:32:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (1.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  Rendered users/show.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 351ms (Views: 326.5ms | ActiveRecord: 9.2ms)
+
+
+Started PUT "/forums/1/articles/1/like" for 172.19.0.1 at 2018-05-11 21:32:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#upvote as HTML
+  Parameters: {"authenticity_token"=>"zRKuni+APZiWbtx+7K4pxScjDIh6iFN4y5aJ5faP8wx/roWmsWpDgx9WOQfF4C7An29eZyeyF1Q5lN5AoH35sA==", "forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (1.0ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4 ORDER BY "votes"."id" DESC LIMIT $5[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "votes" SET "updated_at" = $1, "vote_flag" = $2 WHERE "votes"."id" = $3[0m  [["updated_at", "2018-05-11 21:32:11.513868"], ["vote_flag", "t"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/1
+Completed 302 Found in 30ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/forums/1/articles/1" for 172.19.0.1 at 2018-05-11 21:32:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 445ms (Views: 401.9ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:32:12 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (1.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"], ["vote_flag", "t"]]
+  Rendered users/show.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 367ms (Views: 341.3ms | ActiveRecord: 7.3ms)
+
+
+Started DELETE "/forums/1/articles/1/borrar" for 172.19.0.1 at 2018-05-11 21:32:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3V8913kc32jAloar88WTaoCVaBzJ++Mf/mGMeeUUti5v4xbv5/ahc0muY9Lai5RvONk685TBpzMMY9vcs+a8kg==", "forum_id"=>"1", "id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActsAsVotable::Vote Load (0.6ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 1], ["votable_type", "Article"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 2]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1
+Completed 302 Found in 43ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/forums/1" for 172.19.0.1 at 2018-05-11 21:32:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Forum Load (0.1ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forums/show.html.erb within layouts/application
+  Rendered forums/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 373ms (Views: 334.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:32:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 292ms (Views: 269.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:32:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (1.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  Rendered users/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 345ms (Views: 309.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:33:37 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (1.1ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (65.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1420ms (Views: 1270.0ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:33:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 479ms (Views: 349.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:34:00 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (1.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 418ms (Views: 352.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/forums/1/articles/new" for 172.19.0.1 at 2018-05-11 21:34:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (95.6ms)
+  Rendered articles/new.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 448ms (Views: 401.0ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:34:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d7hR1fdolswEZQKMm0aUF+UZ9F0ODYDjJIG1LDveKAqO8EmU0FMuae161aAjPHydwZAFp+asgYxptVAW1LQSMw==", "article"=>{"title"=>"Articulo 1", "body"=>"Mi primer articulo", "op"=>"fjlarach@uc.cl", "forum_id"=>"1"}, "commit"=>"Create Article", "forum_id"=>"1"}
+  [1m[36mForum Load (0.5ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "op", "forum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Articulo 1"], ["body", "Mi primer articulo"], ["op", "fjlarach@uc.cl"], ["forum_id", 1], ["created_at", "2018-05-11 21:34:15.163593"], ["updated_at", "2018-05-11 21:34:15.163593"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/2
+Completed 302 Found in 51ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:34:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (1.0ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (77.8ms)
+Completed 200 OK in 520ms (Views: 471.0ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:34:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 437ms (Views: 404.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:35:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 371ms (Views: 342.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:35:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 268ms (Views: 247.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:35:37 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 491ms (Views: 453.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:35:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 352ms (Views: 325.6ms | ActiveRecord: 5.4ms)
+
+
+Started PUT "/forums/1/articles/2/like" for 172.19.0.1 at 2018-05-11 21:35:54 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#upvote as HTML
+  Parameters: {"authenticity_token"=>"FhBJMqXTt5I0CCZ3+O/R3VoUmIyFAPhnKWHWXCFBNgekrGIKOznJib0www7RodbY4ljKY9g6vEvbY4H5d7M8uw==", "forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 2], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_type", "Article"], ["votable_id", 2], ["voter_type", "User"], ["voter_id", 1], ["vote_flag", "t"], ["vote_weight", 1], ["created_at", "2018-05-11 21:35:54.575205"], ["updated_at", "2018-05-11 21:35:54.575205"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/forums/1/articles/2
+Completed 302 Found in 54ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:35:54 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.4ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 433ms (Views: 376.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:35:58 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 368ms (Views: 330.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:36:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 328ms (Views: 298.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:37:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 399ms (Views: 381.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:37:38 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 358ms (Views: 334.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:39:06 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (8.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 503ms (Views: 454.9ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/forums/1/articles" for 172.19.0.1 at 2018-05-11 21:39:11 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"forum_id"=>"1"}
+  [1m[36mForum Load (0.6ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."forum_id" = $1[0m  [["forum_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 333ms (Views: 308.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forums/1/articles/2" for 172.19.0.1 at 2018-05-11 21:39:13 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"forum_id"=>"1", "id"=>"2"}
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT  "forums".* FROM "forums" WHERE "forums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."forum_id" = $1 AND "articles"."id" = $2 LIMIT $3[0m  [["forum_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 341ms (Views: 290.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/users/1" for 172.19.0.1 at 2018-05-11 21:39:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."vote_flag" = $3[0m  [["voter_id", 1], ["voter_type", "User"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActsAsVotable::Vote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2[0m  [["voter_id", 1], ["voter_type", "User"]]
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Article"], ["vote_flag", "t"]]
+  Rendered users/show.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 413ms (Views: 363.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:39:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.9ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 376ms (Views: 320.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:39:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 383ms (Views: 341.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:39:46 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.8ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 471ms (Views: 430.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/forums" for 172.19.0.1 at 2018-05-11 21:39:50 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ForumsController#index as HTML
+  Rendering forums/index.html.erb within layouts/application
+  [1m[36mForum Load (0.7ms)[0m  [1m[34mSELECT "forums".* FROM "forums"[0m
+  Rendered forums/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 323ms (Views: 282.6ms | ActiveRecord: 1.4ms)
+
+

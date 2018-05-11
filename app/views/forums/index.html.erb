@@ -77,7 +77,11 @@
     </div>
     <div class="col-sm-2 sidenav">
       <br>
-      <%= link_to 'Nuevo Foro', new_forum_path %>
+      <%= link_to new_forum_path do %>
+      <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
+        <span >Nuevo Foro</span>
+      </button>
+      <% end%>
     </div>
   </div>
 </div>

@@ -208,13 +208,8 @@ html, body {
    .img-container {
      height: 200px;
    }
-<<<<<<< HEAD
-      .like:hover{
-      text-decoration: none;
-    }
-=======
+
    .like:hover{
      text-decoration: none;
    }
->>>>>>> Votes
  }
