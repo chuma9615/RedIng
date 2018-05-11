@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: %i[show edit update destroy]
-  before_action :require_user, only: [:show, :index, :new, :create]
+  before_action :require_user, only: [:new, :create]
 
   def new
     @forum = Forum.new
