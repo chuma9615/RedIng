@@ -15,6 +15,16 @@ class ArticlesController < ApplicationController
   def index
     @articles = @forum.articles.all
   end
+   
+  def upvote
+   @article.liked_by current_user
+   redirect_to  forum_article_path
+  end
+
+  def downvote
+   @article.disliked_by current_user
+   redirect_to forum_article_path
+  end
 
   def create
     @article = Article.new(article_params)
