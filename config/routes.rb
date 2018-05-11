@@ -24,10 +24,14 @@ Rails.application.routes.draw do
     end
 
   resources :forums do
+    member do
+    delete "borrar" => 'forums#destroy'
+    end
     resources :articles do
       member do
         put "like" => "articles#upvote"
         put "dislike" => "articles#downvote"
+        delete "borrar" => 'articles#destroy'
       end
     end
   end

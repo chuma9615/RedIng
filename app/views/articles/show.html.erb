@@ -83,6 +83,13 @@
             <span >"Volver a Foro"</span>
           </button>
           <% end%>
+          <% if current_user.email == @article.op %>
+            <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
+            <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+              <span >"Eliminar Articulo"</span>
+            </button>
+            <% end%>
+          <% end%>
         </div>
       </div>
     </center>
