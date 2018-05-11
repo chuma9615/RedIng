@@ -32,7 +32,7 @@ class ForumsController < ApplicationController
   private
 
     def forum_params
-      params.require(:forum).permit(:name, :description)
+      params.require(:forum).permit(:name, :description, :op)
     end
 
     def set_forum
