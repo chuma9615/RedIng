@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     respond_to do |format|
       if @article.save
-        format.html {redirect_to forums_path }
+        format.html { redirect_to forum_article_path(@forum, @article), notice: "Se ha creado con exito el artículo" }
       else
         format.html { render :new }
       end

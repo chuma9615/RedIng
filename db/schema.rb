@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421155653) do
+ActiveRecord::Schema.define(version: 20180420150913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20180421155653) do
   create_table "comments", force: :cascade do |t|
     t.string "op"
     t.text "content"
+    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "forums", force: :cascade do |t|
@@ -37,15 +39,6 @@ ActiveRecord::Schema.define(version: 20180421155653) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "forum_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["forum_id"], name: "index_subscriptions_on_forum_id"
-    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +52,5 @@ ActiveRecord::Schema.define(version: 20180421155653) do
   end
 
   add_foreign_key "articles", "forums"
+  add_foreign_key "comments", "articles"
 end

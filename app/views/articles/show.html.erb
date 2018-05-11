@@ -47,19 +47,24 @@
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
+      <br>
+      <%= link_to 'Volver al Foro', forum_articles_path(@forum) %>
 
     </div>
     <div class="col-sm-8 text-center">
-
 
       <center>
       <div class= "card" style="width:400px">
         <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
         <div class="card-body">
-          <h4 class="card-title"><strong>Titulo:</strong><%= @article.title %></h4>
-          <p class="card-text"><strong>Cuerpo:</strong><%= @article.body %></p>
-          <p class="card-text"><strong>Creador:</strong><%= @article.op %></p>
-          <%= link_to "Volver a Foro", forum_path(@forum) %>
+          <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
+          <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
+          <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
+          <h4 class="card-title"><strong>Comentarios</h4>
+          <%= link_to "Nuevo comentario", new_forum_article_comment_path(@forum, @article) %>
+          <% @article.comments.each do |comment| %>
+            <p class="card-text"><strong><%= comment.op %>: </strong><%= comment.content %></p>
+          <% end %>
         </div>
       </div>
     </center>

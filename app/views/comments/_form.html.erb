@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>REDDING</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+          <center>
+
+              <%= form_with(model: [forum, article, comment], local: true) do |form| %>
+              <% if comment.errors.any? %>
+                  <ul>
+                  <% comment.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+              <% end %>
+
+              <div class="field">
+                <%= form.hidden_field :op, value: current_user.email %>
+              </div>
+
+              <div class="field">
+                <h3> Comentario</h3>
+                <%= form.text_field :content %>
+              </div>
+
+              <div class="field">
+                <%= form.hidden_field :article_id, value: @article.id %>
+              </div>
+              <br>
+              <div class="actions">
+                <%= form.submit%>
+              </div>
+            <% end %>
+          </center>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+      </div>
+</div>
+
+</body>
+</html>
