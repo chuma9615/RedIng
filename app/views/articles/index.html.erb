@@ -69,14 +69,17 @@
       <div class="card" style="width:400px">
         <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
         <div class="card-body">
-          <h4 class="card-title"><strong>Titulo:</strong> <%= article.title %> </h4>
+          <h4 class="card-title"><strong>Titulo:</strong> <%= article.title %></h4>
         </div>
-        <td><%= link_to 'Ver articulo', forum_article_path(@forum, article) %></td>
+
+        <%= link_to 'Ver articulo', forum_article_path(@forum, article) %>
       </div>
     </center>
       <br>
       <br>
     <% end %>
+    <center><%= will_paginate @articles%></center>
+
     </div>
     <div class="col-sm-2 sidenav">
       <br>

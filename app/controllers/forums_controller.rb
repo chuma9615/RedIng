@@ -8,9 +8,18 @@ class ForumsController < ApplicationController
 
   def index
     if params[:search]
-      @forums = Forum.where(['name LIKE ?',"%#{params[:search]}%"])
+      @forums = Forum.paginate(:page => params[:page], :per_page => 2).where(['name LIKE ?',"%#{params[:search]}%"])
+      respond_to do |format|
+        format.html
+        format.js
+    end
     else
       @forums = Forum.all
+      @forums = @forums.paginate(:page => params[:page], :per_page => 2)
+      respond_to do |format|
+        format.html
+        format.js
+    end
     end
   end
 

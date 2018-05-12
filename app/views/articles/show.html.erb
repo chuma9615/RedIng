@@ -92,7 +92,8 @@
         </div>
         <div class="col-sm-7 text-center">
           <h4 class="card-title"><strong>Comentarios</h4></strong>
-          <% @article.comments.each do |comment| %>
+          <% @comments.each do |comment| %>
+
             <div class="card-text" style="text-align:left;">
               <div class="dropdown">
               <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;">
@@ -111,6 +112,8 @@
               </div>
               </div>
           <% end %>
+          <center><%= will_paginate @comments%></center>
+
           <%= link_to new_forum_article_comment_path(@forum.id, @article.id) do %>
           <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
             <span >Nuevo comentario</span>

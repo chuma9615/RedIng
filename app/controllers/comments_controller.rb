@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = @article.comments.all
+    @comments = @article.comments.paginate(:page => params[:page], :per_page => 6)
   end
 
   def create

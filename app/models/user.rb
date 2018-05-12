@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  has_many :subscriptions
-  has_many :formus, through: :subscriptions
+  has_many :forums
+
 
 end

@@ -29,8 +29,7 @@
     </div>
   </center>
     <div class="col-sm-8">
-
-      <% @user.find_voted_items.each do |vote| %>
+      <% @votos.each do |vote| %>
         <% if vote.is_a?(Article)%>
           <% if @user.voted_up_on? vote %>
             <div class="media border p-3">
@@ -53,6 +52,8 @@
           <% end %>
         <% end %>
       <% end %>
+      <center><%= will_paginate @votos%></center>
+
   </div>
 </div>
 
