@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_forum_article
-  before_action :set_article_comment, only:%i[show edit update destroy]
-  before_action :require_user, only: [:show, :index, :new, :create,:destroy]
+  before_action :set_article_comment, only:%i[show edit update upvote downvote destroy]
+  before_action :require_user, only: [:show, :index, :new, :create,:destroy, :upvote, :downvote]
 
   def new
     @comment = Comment.new
@@ -33,6 +33,19 @@ class CommentsController < ApplicationController
       else
         render 'edit'
       end
+  end
+
+  def downvote
+
+   @comment.disliked_by current_user
+   redirect_to forum_article_path(@forum, @article)
+
+  end
+
+  def upvote
+    @comment.liked_by current_user
+    redirect_to forum_article_path(@forum, @article)
+
   end
 
   def destroy
