@@ -16,8 +16,16 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    if params[:search]
+      @articles = Article.paginate(:page => params[:page], :per_page => 2).where(['name LIKE ?',"%#{params[:search]}%"])
+      respond_to do |format|
+        format.html
+        format.js
+    end
+    else
     @articles = @forum.articles.all
     @articles = @articles.paginate(:page => params[:page], :per_page => 2)
+    end
   end
 
 
