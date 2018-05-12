@@ -54,10 +54,11 @@
 
       <center>
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
         <div class="card-body">
-          <h4 class="card-title"><strong>Titulo:</strong> <%= @forum.name %> </h4>
-          <p class="card-text"><strong>Descripcion:</strong><%= @forum.description %></p>
+          <h4 class="card-title"><h1>Foro: <%= @forum.name %></h1>
+          <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="65" width="65" alt="Card image">
+
+          <p class="card-text"><h5>Descripción: <%= @forum.description %></h5>
           <%= link_to "Articulos", forum_articles_path(@forum) %>
         </div>
 
@@ -65,6 +66,22 @@
     </center>
     </div>
     <div class="col-sm-2 sidenav">
+      <% if current_user %>
+        <% if current_user.email == @forum.op%>
+          <%= link_to edit_forum_path(@forum), method: "get" do %>
+          <button type="button" class="btn btn-default" aria-label="Left-Align" text-decoration="none">
+            <span >Editar Foro</span>
+          </button>
+          <% end%>
+          <br>
+          <br>
+          <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+          <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+            <span >Eliminar Foro</span>
+          </button>
+          <% end%>
+        <% end%>
+      <% end %>
     </div>
   </div>
 </div>

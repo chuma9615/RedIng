@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RED-ING</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4">
+
+        <center>
+        <%= form_with(model: [@forum, @article], local: true) do |f|%>
+            <br>
+            <br>
+            <br>
+            <br>
+          <%= f.text_field :title, :placeholder => "Titulo" %><br><br>
+          <%= f.text_field :body, :placeholder => "Cuerpo" %><br><br>
+
+          <%= f.submit "Listo", class: "btn btn-primary"%>
+        <% end %>
+      </center>
+
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

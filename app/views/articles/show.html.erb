@@ -97,21 +97,23 @@
               <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;">
               <strong><mark> <%= comment.op %>: </mark></strong>
               <%= comment.content %>
-              <% if current_user.email == comment.op %>
-                <%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>
-                <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
-                  <span >x</span>
-                </button>
+              <% if current_user %>
+                <% if current_user.email == comment.op %>
+                  <%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>
+                  <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
+                    <span >x</span>
+                  </button>
+                  <% end%>
+                  <%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>
+                  <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
+                    <span >E</span>
+                  </button>
+                  <% end%>
                 <% end%>
-                <%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>
-                <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
-                  <span >E</span>
-                </button>
-                <% end%>
-              <% end%>
+              <% end %>
           <% end %>
             </p>
-          <%= link_to new_forum_article_comment_path(@forum, @article) do %>
+          <%= link_to new_forum_article_comment_path(@forum.id, @article.id) do %>
           <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
             <span >Nuevo comentario</span>
           </button>
@@ -122,13 +124,23 @@
 
     </div>
     <div class="col-sm-2 sidenav">
-      <% if current_user.email == @article.op %>
-        <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
-        <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
-          <span >Eliminar Articulo</span>
-        </button>
+      <% if current_user %>
+        <% if current_user.email == @article.op %>
+
+          <%= link_to edit_forum_article_path(@forum, @article), method: "get" do %>
+          <button type="button" class="btn btn-default" aria-label="Left-Align" text-decoration="none">
+            <span >Editar Articulo</span>
+          </button>
+          <% end%>
+          <br>
+          <br>
+          <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
+          <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+            <span >Eliminar Articulo</span>
+          </button>
+          <% end%>
         <% end%>
-      <% end%>
+      <% end %>
     </div>
   </div>
 </div>
