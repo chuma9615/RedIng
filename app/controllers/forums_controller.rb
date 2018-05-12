@@ -29,9 +29,21 @@ class ForumsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+      if @forum.update(forum_params)
+        redirect_to forums_path
+      else
+        render 'edit'
+      end
+  end
+
   def destroy
     @forum.destroy
-    redirect_to forum_path
+    redirect_to forums_path
   end
 
 

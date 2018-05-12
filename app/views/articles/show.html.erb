@@ -49,60 +49,96 @@
     <div class="col-sm-2 sidenav">
       <%= link_to forum_path(@forum) do %>
       <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
-        <span >"Volver a Foro"</span>
+        <span >Volver a Foro</span>
       </button>
       <% end%>
 
     </div>
     <div class="col-sm-8 text-center">
+      <div class="row">
 
-      <center>
-      <div class= "card" style="width:400px">
-        <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
-        <div class="card-body">
-          <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
-          <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
-          <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
-          <h4 class="card-title"><strong>Comentarios</h4>
-          <%= link_to "Nuevo comentario", new_forum_article_comment_path(@forum, @article) %>
+        <div class="col-sm-5 text-center">
 
+          <div class= "card" style="width:400px">
+            <br>
+            <br>
+            <br>
+            <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="60" width="60" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
+              <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
+              <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
+              <%= link_to like_forum_article_path(@forum.id,@article) , class: "like", method: :put do %>
+              <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
+                <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                <span > </span>
+                <span class="badge"> <%= @article.get_upvotes.size%> </span>
+                <span > </span>
+              </button>
+              <%end%>
+              <%= link_to dislike_forum_article_path(@forum.id,@article) , class: "dislike", method: :put do %>
+              <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
+                <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                <span > </span>
+                <span class="badge"> <%= @article.get_downvotes.size%> </span>
+                <span > </span>
+              </button>
+              <%end%>
+              <br>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-7 text-center">
+          <h4 class="card-title"><strong>Comentarios</h4></strong>
           <% @article.comments.each do |comment| %>
-            <p class="card-text"><strong><%= comment.op %>: </strong><%= comment.content %></p>
+            <div class="card-text" style="text-align:left;">
+              <div class="dropdown">
+              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;">
+              <strong><mark> <%= comment.op %>: </mark></strong>
+              <%= comment.content %>
+              <% if current_user %>
+                <% if current_user.email == comment.op %>
+                      <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>Editar<% end%></li>
+                        <li><%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>Borrar<% end%></li>
+                      </ul>
+                <% end%>
+              <% end %>
+              </div>
+              </div>
+          <% end %>
+          <%= link_to new_forum_article_comment_path(@forum.id, @article.id) do %>
+          <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
+            <span >Nuevo comentario</span>
+          </button>
           <% end %>
           <br>
-
-          <%= link_to like_forum_article_path(@forum.id,@article) , class: "like", method: :put do %>
-          <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
-            <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-            <span > </span>
-            <span class="badge"> <%= @article.get_upvotes.size%> </span>
-            <span > </span>
-          </button>
-          <%end%>
-          <%= link_to dislike_forum_article_path(@forum.id,@article) , class: "dislike", method: :put do %>
-          <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
-            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-            <span > </span>
-            <span class="badge"> <%= @article.get_downvotes.size%> </span>
-            <span > </span>
-          </button>
-          <%end%>
-          <br>
-          <br>
-          <br>
-
         </div>
       </div>
-    </center>
+
     </div>
     <div class="col-sm-2 sidenav">
-      <% if current_user.email == @article.op %>
-        <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
-        <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
-          <span >"Eliminar Articulo"</span>
-        </button>
+      <% if current_user %>
+        <% if current_user.email == @article.op %>
+
+          <%= link_to edit_forum_article_path(@forum, @article), method: "get" do %>
+          <button type="button" class="btn btn-default" aria-label="Left-Align" text-decoration="none">
+            <span >Editar Articulo</span>
+          </button>
+          <% end%>
+          <br>
+          <br>
+          <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
+          <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+            <span >Eliminar Articulo</span>
+          </button>
+          <% end%>
         <% end%>
-      <% end%>
+      <% end %>
     </div>
   </div>
 </div>

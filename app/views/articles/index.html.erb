@@ -88,14 +88,22 @@
         <span >Volver a Foros</span>
       </button>
       <% end%>
-
-      <% if current_user.email == @forum.op %>
-        <br>
-        <br>
-        <%= link_to borrar_forum_path(@forum), method: "delete" do %>
-        <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
-          <span >Eliminar Foro</span>
-        </button>
+      <% if current_user %>
+        <% if current_user.email == @forum.op %>
+          <br>
+          <br>
+          <%= link_to edit_forum_path(@forum), method: "get" do %>
+          <button type="button" class="btn btn-default" aria-label="Left-Align" text-decoration="none">
+            <span >Editar Foro</span>
+          </button>
+          <% end%>
+          <br>
+          <br>
+          <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+          <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+            <span >Eliminar Foro</span>
+          </button>
+          <% end%>
         <% end%>
       <% end%>
 
