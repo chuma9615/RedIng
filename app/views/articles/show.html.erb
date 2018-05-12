@@ -93,26 +93,24 @@
         <div class="col-sm-7 text-center">
           <h4 class="card-title"><strong>Comentarios</h4></strong>
           <% @article.comments.each do |comment| %>
-            <p class="card-text" style="text-align:left;">
+            <div class="card-text" style="text-align:left;">
+              <div class="dropdown">
               <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;">
               <strong><mark> <%= comment.op %>: </mark></strong>
               <%= comment.content %>
               <% if current_user %>
                 <% if current_user.email == comment.op %>
-                  <%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>
-                  <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
-                    <span >x</span>
-                  </button>
-                  <% end%>
-                  <%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>
-                  <button type="button" class="btn btn-danger btn-xs" aria-label="Light-Align" text-decoration="none">
-                    <span >E</span>
-                  </button>
-                  <% end%>
+                      <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>Editar<% end%></li>
+                        <li><%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>Borrar<% end%></li>
+                      </ul>
                 <% end%>
               <% end %>
+              </div>
+              </div>
           <% end %>
-            </p>
           <%= link_to new_forum_article_comment_path(@forum.id, @article.id) do %>
           <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
             <span >Nuevo comentario</span>
