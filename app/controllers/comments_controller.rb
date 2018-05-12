@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_forum_article
   before_action :set_article_comment, only:%i[show edit update destroy]
-  before_action :require_user, only: [:show, :index, :new, :create]
+  before_action :require_user, only: [:show, :index, :new, :create,:destroy]
 
   def new
     @comment = Comment.new
@@ -27,11 +27,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+      if @comment.update(comment_params)
+        redirect_to forum_article_path(@forum, @article)
+      else
+        render 'edit'
+      end
+  end
+
   def destroy
-    @article = Article.find(params[:article_id])
-    @comment = @Article.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article)
+    redirect_to forum_article_path(@forum, @article)
   end
 
   private

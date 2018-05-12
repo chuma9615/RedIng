@@ -18,7 +18,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :forums do
     resources :articles do
-      resources :comments
+      resources :comments do
+        member do
+        delete "borrar" => 'comments#destroy'
+        end
+      end
+
 
       end
     end
