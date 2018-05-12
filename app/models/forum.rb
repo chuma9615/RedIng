@@ -4,7 +4,5 @@ class Forum < ApplicationRecord
 
   acts_as_votable
 
-  has_many :subscriptions
-  has_many :users, through: :subscriptions
 
 end

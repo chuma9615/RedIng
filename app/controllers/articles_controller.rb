@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote, :destroy, :update, :edit]
-  before_action :set_forum_article, only: %i[show update destroy upvote downvote destroy, edit]
+  before_action :set_forum_article, only: %i[ update destroy destroy edit]
   before_action :require_user, only: [:new, :create, :upvote, :downvote, :destroy, :update, :edit]
 
 
@@ -10,32 +10,31 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = @forum.articles.find_by!(id: params[:id]) if @forum
+    @comments = @article.comments.paginate(:page => params[:page], :per_page => 6)
+    @article = @forum.articles.find_by!(id: params[:id]) if @forum
   end
 
   def index
     @articles = @forum.articles.all
+    @articles = @articles.paginate(:page => params[:page], :per_page => 2)
   end
 
-  def upvote
-   @article.liked_by current_user
-   redirect_to  forum_article_path
-  end
+
 
   def downvote
+   @article = @forum.articles.find_by!(id: params[:id]) if @forum
    @article.disliked_by current_user
    redirect_to forum_article_path
   end
 
   def upvote
+    @article = @forum.articles.find_by!(id: params[:id]) if @forum
     @article.liked_by current_user
     redirect_to  forum_article_path
   end
 
-  def downvote
-    @article.disliked_by current_user
-    redirect_to forum_article_path
-  end
+
 
   def create
     @article = Article.new(article_params)

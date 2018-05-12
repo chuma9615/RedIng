@@ -1,0 +1,10 @@
+  $boxes = $('<%= j render(@forums) %>')
+
+  $('#forums-masonry').append( $boxes ).imagesLoaded( function(){
+    $('#forums-masonry').masonry( 'reload');
+  });
+  <% if @forums.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@forums) %>');
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
