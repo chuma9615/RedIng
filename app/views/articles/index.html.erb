@@ -60,8 +60,8 @@
     </div>
     <div class="col-sm-8 text-left">
     <center>
-      <h1>Todos los foros</h1>
-      <%= form_tag forums_path, :method => 'get' do %>
+      <h1>Todos los Articulos</h1>
+      <%= form_tag forum_articles_path, :method => 'get' do %>
         <p>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag "BUSCAR", :name => nil , class: "btn btn-primary"%>
