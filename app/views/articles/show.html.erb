@@ -106,6 +106,8 @@
                       <ul class="dropdown-menu">
                         <li><%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>Editar<% end%></li>
                         <li><%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>Borrar<% end%></li>
+                        <li><%= link_to like_forum_article_comment_path(@forum.id,@article, comment) , method: :put do %>Like<span class="badge"> <%= comment.get_upvotes.size%> </span><% end%></li>
+                        <li><%= link_to dislike_forum_article_comment_path(@forum.id,@article, comment), method: :put do %>Dislike<span class="badge"> <%= comment.get_downvotes.size%> </span><% end%></li>
                       </ul>
                 <% end%>
               <% end %>

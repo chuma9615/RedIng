@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       resources :comments do
         member do
         delete "borrar" => 'comments#destroy'
+        put "like" => 'comments#upvote'
+        put "dislike" => 'comments#downvote'
         end
       end
 
@@ -31,6 +33,8 @@ Rails.application.routes.draw do
   resources :forums do
     member do
     delete "borrar" => 'forums#destroy'
+    put "follow" => 'forums#follow'
+    put "disfollow" => 'forums#unfollow'
     end
     resources :articles do
       member do
