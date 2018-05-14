@@ -14,7 +14,7 @@
       <div class="card" style="width:400px">
         <div class="card-body">
           <%= filepicker_js_include_tag %>
-          <%= filepicker_image_tag @user.avatar_url,transform: filestack_transform.resize(width:200, height:200, fit: 'clip', rounded_corners:).enhance   %>
+          <%= filepicker_image_tag @user.avatar_url,transform: filestack_transform.resize(width:200, height:200, fit: 'clip', rounded_corners: {})  %>
           <h4 class="card-title"> <%= @user.first_name %> <%= @user.last_name %></h4>
           <h5 class="card-title">Año de nacimiento: <%= @user.born_year %> </h5>
           <h5 class="card-title">Mail: <%= @user.email %> </h5>
