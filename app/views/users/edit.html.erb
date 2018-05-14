@@ -25,6 +25,8 @@
           <%= f.text_field :born_year, :placeholder => "Año de Nacimiento" %><br><br>
           <%= f.email_field :email, :placeholder => "Email" %><br><br>
           <%= f.password_field :password, :placeholder => "Contraseña" %><br><br><br>
+          <%= f.label :avatar_url, "Elige tu foto" %>
+          <%= f.filepicker_field :avatar_url %>
           <%= f.submit "Listo", class: "btn btn-primary" %>
         <% end %>
       </center>
