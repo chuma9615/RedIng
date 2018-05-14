@@ -11,6 +11,7 @@
       <%= f.text_field :born_year, :placeholder => "Año de Nacimiento" %><br><br>
       <%= f.email_field :email, :placeholder => "Email" %><br><br>
       <%= f.password_field :password, :placeholder => "Contraseña" %><br><br><br>
+      <%= filepicker_js_include_tag %>
       <%= f.label :avatar_url, "Elige tu foto" %>
       <%= f.filepicker_field :avatar_url %> <!-- User#avatar_url is a regular string column -->
       <%= f.submit "Crear Cuenta", class: "btn btn-primary" %>
