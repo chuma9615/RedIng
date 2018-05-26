@@ -55,6 +55,12 @@ class ForumsController < ApplicationController
     redirect_to forums_path
   end
 
+  def subscribe
+    @forum = Forum.find(params[:forum_id])
+    @user = current_user
+    @user.forums << @forum
+    redirect_to forums_path
+  end
 
 
   private

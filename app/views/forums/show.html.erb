@@ -80,6 +80,13 @@
             <span >Eliminar Foro</span>
           </button>
           <% end%>
+          <br>
+          <br>
+          <%= link_to forum_subscribe_path(@forum), method: "post" do %>
+          <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+            <span > Subscribir</span>
+          </button>
+          <% end%>
         <% end%>
       <% end %>
     </div>

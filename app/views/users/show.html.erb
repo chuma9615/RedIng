@@ -20,6 +20,7 @@
           <h5 class="card-title">Mail: <%= @user.email %> </h5>
           <h5 class="card-title">Likes Totales: <%= @user.votes.up.size %> </h5>
           <h5 class="card-title">Disikes Totales: <%= @user.votes.down.size %> </h5>
+          <h5 class="card-title">Foros Totales: <%= @user.forums.size %> </h5>
           <footer><h6 style=".small">Totales consideran articulos y comentarios</h6></footer>
           <% if current_user == @user %>
             <p class="recipe-edit">
