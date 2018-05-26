@@ -212,4 +212,8 @@ html, body {
    .like:hover{
      text-decoration: none;
    }
+
+   .btn-info {
+    width: 78px !important;
+  }
  }
