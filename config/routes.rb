@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :forums do
+    post "subscribe" => 'forums#subscribe'
+    post "unsuscribe" => 'forums#unsuscribe'
     resources :articles do
       resources :comments do
         member do

@@ -59,9 +59,25 @@
           <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="65" width="65" alt="Card image">
 
           <p class="card-text"><h5>Descripción: <%= @forum.description %></h5>
+          <p class="card-text"><h5>Subs: <%= @forum.users.size %></h5>
           <%= link_to "Articulos", forum_articles_path(@forum) %>
         </div>
-
+        <br>
+        <br>
+        <% if !current_user.forums.include?(@forum)%>
+        <%= link_to forum_subscribe_path(@forum), method: "post" do %>
+        <button type="button" class="btn btn-info " aria-label="Left-Align" text-decoration="none">
+          <span > Subscribir</span>
+        </button>
+        <% end%>
+        <% end%>
+        <% if current_user.forums.include?(@forum)%>
+        <%= link_to forum_unsuscribe_path(@forum), method: "destroy" do %>
+        <button type="button" class="btn btn-info active" aria-label="Left-Align" text-decoration="none">
+          <span > Suscrito</span>
+        </button>
+        <% end%>
+        <% end%>
       </div>
     </center>
     </div>
