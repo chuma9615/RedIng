@@ -64,10 +64,19 @@
         </div>
         <br>
         <br>
+        <% if !current_user.forums.include?(@forum)%>
         <%= link_to forum_subscribe_path(@forum), method: "post" do %>
-        <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
+        <button type="button" class="btn btn-info " aria-label="Left-Align" text-decoration="none">
           <span > Subscribir</span>
         </button>
+        <% end%>
+        <% end%>
+        <% if current_user.forums.include?(@forum)%>
+        <%= link_to forum_unsuscribe_path(@forum), method: "destroy" do %>
+        <button type="button" class="btn btn-info active" aria-label="Left-Align" text-decoration="none">
+          <span > Suscrito</span>
+        </button>
+        <% end%>
         <% end%>
       </div>
     </center>
