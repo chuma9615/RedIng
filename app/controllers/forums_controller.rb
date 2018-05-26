@@ -58,7 +58,7 @@ class ForumsController < ApplicationController
   def subscribe
     @forum = Forum.find(params[:forum_id])
     @user = current_user
-    @user.forums << @forum
+    @user.forums << @forum unless @user.forums.include?(@forum)
     redirect_to forums_path
   end
 
