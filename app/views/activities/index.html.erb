@@ -1,0 +1,12 @@
+<h1>Friends&rsquo; Activities</h1>
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <% if current_user.forums.include?(activity.trackable) %>
+    <% activity.trackable.articles.each do |article| %>
+
+    <%=  article.op %>
+      Creo  <%= link_to activity.trackable.name, activity.trackable %> que incluye <%=  article.body %>
+    <% end %>
+    <% end %>
+  </div>
+<% end %>
