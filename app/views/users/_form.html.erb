@@ -17,7 +17,7 @@
       <%= form.text_field :first_name, :placeholder => "Nombre" %><br><br>
       <%= form.text_field :last_name, :placeholder => "Apellido" %><br><br>
       <!--<%= form.text_field :born_year, :placeholder => "Año de Nacimiento" %><br><br> -->
-      <%= form.label :avatar_url, "Año de nacimiento" %>
+      <%= form.label :born_year, "Año de nacimiento" %>
       <%= form.select :born_year, (Date.today.year-100)..(Date.today.year) %><br><br>
       <!--<%= select_year(Date.today, :start_year => Date.today.year, :end_year =>  Date.today.year-100) %>-->
 
