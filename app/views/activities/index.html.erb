@@ -1,0 +1,18 @@
+<h1>Actividades de tus Foros</h1>
+<div class="col-sm-8">
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <% if current_user.forums.include?(activity.trackable) %>
+    <% activity.trackable.articles.each do |article| %>
+    <div class="media border p-3">
+      <div class="media-body">
+        <h4><%= article.op%> </h4>
+        <p>Ha creado el articulo <%= link_to article.title, article %> en el foro <%=link_to activity.trackable.name, activity.trackable %></p>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+</div>
+<% end %>
