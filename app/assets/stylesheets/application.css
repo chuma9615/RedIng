@@ -168,6 +168,12 @@ html, body {
    margin-top: 6px;
  }
 
+ .field_with_errors {
+ padding: 2px;
+ background-color: red;
+ display: table;
+ }
+
  /*  RESPONSIVE */
 
  @media screen and (max-width: 992px) {
@@ -216,4 +222,5 @@ html, body {
    .btn-info {
     width: 76px !important;
   }
+
  }

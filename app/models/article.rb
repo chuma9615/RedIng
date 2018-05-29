@@ -5,5 +5,6 @@ class Article < ApplicationRecord
 
   belongs_to :forum
   has_many :comments, dependent: :destroy
+  validates :title, :body, presence: true
 
 end
