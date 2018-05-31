@@ -5,6 +5,7 @@
     <% if current_user.forums.include?(activity.trackable) %>
     <% activity.trackable.articles.each do |article| %>
     <div class="media border p-3">
+      <img><%= filepicker_image_tag User.find(activity.owner_id).avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
       <div class="media-body">
         <h4><%= article.op%> </h4>
         <p>Ha creado el articulo <%= link_to article.title, article %> en el foro <%=link_to activity.trackable.name, activity.trackable %></p>

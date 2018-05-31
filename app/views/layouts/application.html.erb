@@ -31,9 +31,10 @@
     </div>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-
+            <li><a><%= link_to "Inicio", activities_index_path %></a></li>
             <li><a><%= link_to current_user.first_name, current_user %></a></li>
             <li><a><%= link_to "CERRAR SESIÓN", logout_path, method: "delete" %></a></li>
+
 
         <% else %>
 
