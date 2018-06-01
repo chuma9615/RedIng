@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     end
     resources :articles do
       member do
+        get "vote_sort" => "articles#vote_sort"
         put "like" => "articles#upvote"
         put "dislike" => "articles#downvote"
         delete "borrar" => 'articles#destroy'

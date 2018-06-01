@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote, :destroy, :update, :edit]
+  before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote, :destroy, :update, :edit, :vote_sort]
   before_action :set_forum_article, only: %i[ update destroy destroy edit]
   before_action :require_user, only: [:new, :create, :upvote, :downvote, :destroy, :update, :edit]
 
@@ -28,7 +28,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-
+  def vote_sort
+    @articles = @forum.articles.all
+    @articles = @articles.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2)
+  end
 
   def downvote
    @article = @forum.articles.find_by!(id: params[:id]) if @forum
