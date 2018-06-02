@@ -59,20 +59,19 @@
     <% end %>
 
     </center>
-    
+
     <div class="btn-group" style="float: right;">
       <%= link_to forums_path, method: "get" do %>
-      <button type="button" class="btn btn-default btn-sm disabled" aria-label="Left-Align" text-decoration="none">
+      <button type="button" class="btn btn-default btn-sm" aria-label="Left-Align" text-decoration="none">
         <span >Time</span>
       </button>
       <% end%>
       <%= link_to vote_sort_forum_path(0), method: "get" do %>
-      <button type="button" class="btn btn-default btn-sm" aria-label="Left-Align" text-decoration="none">
+      <button type="button" class="btn btn-default btn-sm disabled" aria-label="Left-Align" text-decoration="none">
         <span >Votes</span>
       </button>
       <% end%>
     </div>
-
 
     <% @forums.each do |forum| %>
       <center>

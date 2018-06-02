@@ -67,6 +67,7 @@
         </div>
         <br>
         <br>
+        <% if current_user %>
         <% if !current_user.forums.include?(@forum)%>
         <%= link_to forum_subscribe_path(@forum), method: "post" do %>
         <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
@@ -81,6 +82,7 @@
         </button>
         <% end%>
         <% end%>
+        <%end%>
       </div>
     </center>
     </div>
