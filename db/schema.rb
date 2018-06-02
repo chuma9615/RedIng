@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180531225803) do
     t.text "body"
     t.string "op"
     t.bigint "forum_id"
+    t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cached_votes_total", default: 0

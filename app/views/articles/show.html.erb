@@ -63,7 +63,13 @@
             <br>
             <br>
             <br>
+            <% if @article.img == "" %>
             <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="60" width="60" alt="Card image">
+            <% end %>
+            <% if @article.img != "" %>
+            <%= filepicker_js_include_tag %>
+            <img><%= filepicker_image_tag @article.img, { w: 200, h: 200, fit: 'clip'}%></img>
+            <% end %>
             <div class="card-body">
               <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
               <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>

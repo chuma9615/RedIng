@@ -46,9 +46,15 @@
                 <%= form.hidden_field :forum_id, value: @forum.id %>
               </div>
               <br>
+              <div class="field">
+              <%= filepicker_js_include_tag %>
+              <%= form.filepicker_field :img %>
+              </div>
+              <br>
               <div class="actions">
                 <%= form.submit%>
               </div>
+
             <% end %>
           </center>
         </div>

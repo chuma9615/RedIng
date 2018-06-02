@@ -78,7 +78,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :op, :forum_id)
+      params.require(:article).permit(:title, :body, :op, :forum_id,:img)
     end
 
     def set_forum_article
