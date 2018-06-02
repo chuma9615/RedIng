@@ -23,6 +23,24 @@ class ForumsController < ApplicationController
     end
   end
 
+
+  def vote_sort
+    if params[:search]
+      @forums = Forum.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 2).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
+      respond_to do |format|
+        format.html
+        format.js
+    end
+    else
+      @forums = Forum.all
+      @forums = @forums.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 2)
+      respond_to do |format|
+        format.html
+        format.js
+    end
+    end
+  end
+
   def show
     @forum = Forum.find(params[:id])
     redirect_to forum_articles_path(@forum)

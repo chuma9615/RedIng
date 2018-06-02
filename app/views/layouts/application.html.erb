@@ -40,6 +40,19 @@
               </ul>
             </a>
             </li>
+
+            <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown"> Mis Articulos<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              <% current_user.find_voted_items.each do |vote| %>
+              <% if vote.is_a?(Article)%>
+                <% if current_user.voted_up_on? vote %>
+              <li><a><%= link_to vote.title, forum_article_path(vote.forum_id, vote) %></a></li>
+                <%end%>
+              <%end%>
+              <%end%>
+              </ul>
+            </a>
+            </li>
             <li><a><%= link_to current_user.first_name, current_user %></a></li>
             <li><a><%= link_to "CERRAR SESIÓN", logout_path, method: "delete" %></a></li>
 
