@@ -69,7 +69,22 @@
       <% end %>
 
       </center>
-    <h1>Foro: <%= @forum.name %></h1>
+      <h1>Foro: <%= @forum.name %>
+        <% if !current_user.forums.include?(@forum)%>
+        <%= link_to forum_subscribe_path(@forum), method: "post" do %>
+        <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
+          <span > Subscribir</span>
+        </button>
+        <% end%>
+        <% end%>
+        <% if current_user.forums.include?(@forum)%>
+        <%= link_to forum_unsuscribe_path(@forum), method: "post" do %>
+        <button type="button" class="btn btn-info active custom" aria-label="Left-Align" text-decoration="none">
+          <span > Suscrito  </span>
+        </button>
+        <% end%>
+        <% end%>
+      </h1>
     <h5>Descripción: <%= @forum.description %></h5>
     <h3>Artículos: </h3>
     </center>
