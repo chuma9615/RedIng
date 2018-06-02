@@ -39,6 +39,8 @@ Rails.application.routes.draw do
     delete "borrar" => 'forums#destroy'
     put "follow" => 'forums#follow'
     put "disfollow" => 'forums#unfollow'
+    get "vote_sort" => "forums#vote_sort"
+
     end
     resources :articles do
       member do

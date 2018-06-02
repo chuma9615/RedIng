@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = @forum.articles.find_by!(id: params[:id]) if @forum
-    @comments = @article.comments.paginate(:page => params[:page], :per_page => 6)
+    @comments = @article.comments.paginate(:page => params[:page], :per_page => 4)
     @article = @forum.articles.find_by!(id: params[:id]) if @forum
   end
 
@@ -29,8 +29,16 @@ class ArticlesController < ApplicationController
   end
 
   def vote_sort
-    @articles = @forum.articles.all
-    @articles = @articles.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2)
+    if params[:search]
+      @articles = Article.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2).where(['title ILIKE ?',"%#{params[:search]}%"])
+      respond_to do |format|
+        format.html
+        format.js
+    end
+    else
+      @articles = @forum.articles.all
+      @articles = @articles.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2)
+    end
   end
 
   def downvote
