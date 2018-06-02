@@ -1,9 +1,26 @@
-<h1>Actividades de tus Foros</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<div class="row">
 <div class="col-sm-8">
+  <center>
+    <h1>Actividades de tus Foros</h1>
 <% @activities.each do |activity| %>
   <div class="activity">
     <% if current_user.forums.include?(activity.trackable) %>
     <% activity.trackable.articles.each do |article| %>
+    <% if User.find(activity.owner_id).avatar_url == "" %>
+    <div class="media border p-3">
+      <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= User.find(activity.owner_id).first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+      <div class="media-body">
+        <h4><%= article.op%> </h4>
+        <p>Ha creado el articulo <%= link_to article.title, forum_article_path( activity.trackable , article) %> en el foro <%=link_to activity.trackable.name, activity.trackable %></p>
+      </div>
+    </div>
+    <% elsif  User.find(activity.owner_id).avatar_url != "" %>
     <div class="media border p-3">
       <img><%= filepicker_image_tag User.find(activity.owner_id).avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
       <div class="media-body">
@@ -13,7 +30,13 @@
     </div>
     <% end %>
     <% end %>
+    <% end %>
   </div>
+<% end %>
+</div>
+</center>
 
 </div>
-<% end %>
+
+</body>
+</html>
