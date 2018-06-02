@@ -51,60 +51,61 @@
       <% @votos.each do |vote| %>
         <% if vote.is_a?(Article)%>
           <% if @user.voted_up_on? vote %>
-          <% if @user.avatar_url != ""%>
-          <div class="media border p-3">
-            <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
-            <div class="media-body">
-              <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-              <p>Le gustó el articulo: <%= vote.title %></p>
-            </div>
-          </div>
-          <% end %>
-          <% if @user.avatar_url == ""%>
-          <div class="media border p-3">
-              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
-              <div class="media-body">
-                <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-                <p>Le gustó el articulo: <%= vote.title %></p>
-              </div>
-            </div>
-          <% end %>
 
+            <% if @user.avatar_url != ""%>
+              <div class="media border p-3">
+                <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
+                <div class="media-body">
+                  <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                  <p>Le gustó el articulo: <%= vote.title %></p>
+                </div>
+              </div>
+            <% end %>
+
+            <% if @user.avatar_url == ""%>
+              <div class="media border p-3">
+                  <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+                  <div class="media-body">
+                    <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                    <p>Le gustó el articulo: <%= vote.title %></p>
+                  </div>
+                </div>
+            <% end %>
 
           <% elsif @user.voted_down_on? vote %>
-          <% if @user.avatar_url != ""%>
-          <div class="media border p-3">
-            <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
-            <div class="media-body">
-              <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-              <p>Le disgustó el articulo: <%= vote.title %></p>
-            </div>
-          </div>
-          <% end %>
-          <% if @user.avatar_url == ""%>
-          <div class="media border p-3">
-              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
-              <div class="media-body">
-                <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-                <p>Le disgustó el articulo: <%= vote.title %></p>
+            <% if @user.avatar_url != ""%>
+              <div class="media border p-3">
+                <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
+                <div class="media-body">
+                  <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                  <p>Le disgustó el articulo: <%= vote.title %></p>
+                </div>
               </div>
-            </div>
-          <% end %>
-          <% end %>
-
-        <% if vote.is_a?(Comment)%>
-          <% if @user.voted_up_on? vote %>
-          <% if @user.avatar_url != ""%>
-            <div class="media border p-3">
-              <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
-              <div class="media-body">
-                <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-                <p>Le gustó un comentario de: <%= vote.op %></p>
-              </div>
-            </div>
             <% end %>
             <% if @user.avatar_url == ""%>
-            <div class="media border p-3">
+              <div class="media border p-3">
+                <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+                <div class="media-body">
+                  <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                  <p>Le disgustó el articulo: <%= vote.title %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <%end%>
+        <% if vote.is_a?(Comment)%>
+          <% if @user.voted_up_on? vote %>
+            <% if @user.avatar_url != ""%>
+                <div class="media border p-3">
+                  <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
+                  <div class="media-body">
+                    <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                    <p>Le gustó un comentario de: <%= vote.op %></p>
+                  </div>
+                </div>
+            <% end %>
+            <% if @user.avatar_url == ""%>
+              <div class="media border p-3">
                 <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
                 <div class="media-body">
                   <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
@@ -112,38 +113,30 @@
                 </div>
               </div>
             <% end %>
-          <% end %>
-
 
           <% elsif @user.voted_down_on? vote %>
-          <% if @user.avatar_url != ""%>
-            <div class="media border p-3">
-              <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
-              <div class="media-body">
-                <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-                <p>Le disgustó un comentario de: <%= vote.op %></p>
-              </div>
-            </div>
-            <% end %>
-            <% if @user.avatar_url == ""%>
-            <div class="media border p-3">
-                <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+            <% if @user.avatar_url != ""%>
+              <div class="media border p-3">
+                <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
                 <div class="media-body">
                   <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
-                  <p>Le disgustó un comentario de: <%= vote.op  %></p>
+                  <p>Le disgustó un comentario de: <%= vote.op %></p>
                 </div>
               </div>
             <% end %>
-
-
+            <% if @user.avatar_url == ""%>
+              <div class="media border p-3">
+                  <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
+                  <div class="media-body">
+                    <h4><%= @user.first_name%> <%= @user.last_name%> <small><i><%= @user.email %></i></small></h4>
+                    <p>Le disgustó un comentario de: <%= vote.op  %></p>
+                  </div>
+                </div>
+            <% end %>
           <% end %>
         <% end %>
-
-
-
-
-
       <% end %>
+
       <center><%= will_paginate @votos%></center>
 
   </div>
