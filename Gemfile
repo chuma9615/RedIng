@@ -7,7 +7,7 @@ end
 
 gem 'public_activity'
 
-gem 'seed_dump'
+
 
 gem 'filepicker-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
