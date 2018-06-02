@@ -25,6 +25,7 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    redirect_to forum_articles_path(@forum)
   end
 
   def create
