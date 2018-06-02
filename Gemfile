@@ -7,7 +7,9 @@ end
 
 gem 'public_activity'
 
+gem 'seed_dump'
 
+gem 'filestack-rails'
 
 gem 'filepicker-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -44,7 +46,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development, :test do
-
+  gem 'shoulda-matchers', '~> 3.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -54,6 +56,7 @@ end
 
 group :development do
   #use Rspec
+  gem 'rspec-rails', '~> 3.7'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
