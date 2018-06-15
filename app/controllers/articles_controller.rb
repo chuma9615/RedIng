@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   before_action :set_forum, only: [:show, :index, :new, :create, :upvote, :downvote, :destroy, :update, :edit, :vote_sort]
   before_action :set_forum_article, only: %i[ update destroy destroy edit]
   before_action :require_user, only: [:new, :create, :upvote, :downvote, :destroy, :update, :edit]
@@ -86,7 +85,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :op, :forum_id,:img)
+      params.require(:article).permit(:title, :body, :op, :op_id, :forum_id,:img)
     end
 
     def set_forum_article

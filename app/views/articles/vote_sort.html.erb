@@ -103,8 +103,13 @@
     <% @articles.each do |article| %>
     <center>
       <div class="card" style="width:400px">
+        <% if article.img == "" %>
         <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
+        <% elsif article.img != ""  %>
+        <img><%= filepicker_image_tag article.img, { w: 120, h: 120, fit: 'clip'}%>
+        <% end %>
         <div class="card-body">
+
           <h4 class="card-title"><strong>Titulo:</strong> <%= article.title %></h4>
         </div>
         <%= link_to 'Ver articulo', forum_article_path(@forum, article) %>

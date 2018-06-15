@@ -41,6 +41,7 @@
               </div>
               <div class="field">
                 <%= form.hidden_field :op, value: current_user.email %>
+                <%= form.hidden_field :op_id, value: current_user.id %>
               </div>
               <div class="field">
                 <%= form.hidden_field :forum_id, value: @forum.id %>

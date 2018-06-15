@@ -22,6 +22,8 @@
             <br>
           <%= f.text_field :title, :placeholder => "Titulo" %><br><br>
           <%= f.text_field :body, :placeholder => "Cuerpo" %><br><br>
+          <%= filepicker_js_include_tag %>
+          <%= f.filepicker_field :img %>
 
           <%= f.submit "Listo", class: "btn btn-primary"%>
         <% end %>

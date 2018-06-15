@@ -73,7 +73,7 @@
             <div class="card-body">
               <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
               <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
-              <p class="card-text"><strong>Creador: </strong><%= @article.op %></p>
+              <p class="card-text"><strong>Creador: </strong><%= link_to @article.op, user_path(@article.op_id)%></p>
               <%= link_to like_forum_article_path(@forum.id,@article) , class: "like", method: :put do %>
               <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
                 <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -101,8 +101,13 @@
           <% @comments.each do |comment| %>
 
             <div class="card-text" style="text-align:left;">
-              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;">
-              <strong><mark> <%= comment.op %>: </mark></strong>
+              <% if User.find(comment.op_id).avatar_url == "" %>
+              <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;" >
+
+              <% elsif User.find(comment.op_id).avatar_url != "" %>
+              <img><%= filepicker_image_tag User.find(comment.op_id).avatar_url, { w: 200, h: 200, fit: 'clip'}, class:'img-circle',alt: 'Cinque Terre', width: '25', height: '25'%>
+              <% end %>
+              <strong><mark> <%=link_to comment.op, user_path(comment.op_id) %> </mark></strong>
 
               <%= comment.content %>
 

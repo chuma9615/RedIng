@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180531225803) do
     t.string "title"
     t.text "body"
     t.string "op"
+    t.string "op_id"
     t.bigint "forum_id"
     t.string "img"
     t.datetime "created_at", null: false
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180531225803) do
 
   create_table "comments", force: :cascade do |t|
     t.string "op"
+    t.string "op_id"
     t.text "content"
     t.bigint "article_id"
     t.datetime "created_at", null: false
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20180531225803) do
   create_table "forums", force: :cascade do |t|
     t.string "name"
     t.string "op"
+    t.string "op_id"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
