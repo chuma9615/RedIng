@@ -4,6 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# use HTTParty
+gem 'httparty','~> 0.16.2'
 
 gem 'public_activity'
 
