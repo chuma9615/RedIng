@@ -73,14 +73,14 @@
 
       </center>
     <h1>Foro: <%= @forum.name %>
-      <% if !current_user.forums.include?(@forum)%>
+      <% if current_user.admins.find(@forum.id).subscribe == false%>
       <%= link_to forum_subscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
         <span > Subscribir</span>
       </button>
       <% end%>
       <% end%>
-      <% if current_user.forums.include?(@forum)%>
+      <% if current_user.admins.find(@forum.id).subscribe == true%>
       <%= link_to forum_unsuscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info active custom" aria-label="Left-Align" text-decoration="none">
         <span > Suscrito  </span>
@@ -146,10 +146,13 @@
           <% end%>
           <br>
           <br>
+          <% if @forum.admins.where(:forum_id => @forum.id).where(:admin => true).size != 1 %>
           <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Foro</span>
           </button>
+          <% end%>
           <% end%>
         <% end%>
       <% end%>

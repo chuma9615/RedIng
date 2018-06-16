@@ -50,6 +50,10 @@ class ForumsController < ApplicationController
     @forum = Forum.new(forum_params)
     respond_to do |format|
       if @forum.save
+        current_user.forums << @forum
+        a = current_user.admins.find(@forum.id)
+        a.admin= true
+        a.save
         format.html { redirect_to forum_path(@forum), notice: "Se ha creado con exito el foro"}
       else
         format.html {render :new}
@@ -77,14 +81,20 @@ class ForumsController < ApplicationController
   def subscribe
     @forum = Forum.find(params[:forum_id])
     @user = current_user
-    @user.forums << @forum unless @user.forums.include?(@forum)
+    a = current_user.admins.find(@forum.id)
+    a.subscribe = true
+    a.save
+    #@user.forums << @forum unless @user.forums.include?(@forum)
     redirect_to forum_path(@forum)
   end
 
   def unsuscribe
     @forum = Forum.find(params[:forum_id])
     @user = current_user
-    @user.forums.delete(@forum)
+    a = current_user.admins.find(@forum.id)
+    a.subscribe = false
+    a.save
+    #@user.forums.delete(@forum)
     redirect_to forum_path(@forum)
   end
 

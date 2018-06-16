@@ -32,6 +32,7 @@
                 <%= form.text_area :description, :placeholder => "Cuentanos de que se trata" %><br><br><br>
                 <%= form.hidden_field :op, value: current_user.email %>
                 <%= form.hidden_field :op_id, value: current_user.id %>
+                <%= form.hidden_field :admin, value: true %>
                 <%= form.submit "Listo", class: "btn btn-primary" %>
               <% end %>
 
