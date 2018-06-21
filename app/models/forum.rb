@@ -8,9 +8,9 @@ class Forum < ApplicationRecord
   #has_and_belongs_to_many :users
   acts_as_followable
   validates :name, :description, presence: true
-  validates :name, length: { maximum: 25,
+  validates :name, length: { maximum: 30,
     too_long: "%{count} caracteres es lo máximo permitido para el nombre del foro." }
-  validates :description, length: { maximum: 100,
+  validates :description, length: { maximum: 200,
     too_long: "%{count} caracteres es lo máximo permitido para la descripción del foro." }
 
 end

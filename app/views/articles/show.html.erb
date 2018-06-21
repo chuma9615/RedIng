@@ -59,10 +59,10 @@
 
         <div class="col-sm-5 text-center">
 
-          <div class= "card" style="width:400px">
+          <div class= "card" style="width:320px">
             <br>
-            <br>
-            <br>
+            <h4 class="card-title"><%= @article.title %></h4>
+            <p class="card-text"><i>Creado por <%= link_to @article.op, user_path(@article.op_id)%></i></p>
             <% if @article.img == "" %>
             <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="60" width="60" alt="Card image">
             <% end %>
@@ -71,9 +71,7 @@
             <img><%= filepicker_image_tag @article.img, { w: 200, h: 200, fit: 'clip'}%></img>
             <% end %>
             <div class="card-body">
-              <h4 class="card-title"><strong>Titulo: </strong><%= @article.title %></h4>
               <p class="card-text"><strong>Cuerpo: </strong><%= @article.body %></p>
-              <p class="card-text"><strong>Creador: </strong><%= link_to @article.op, user_path(@article.op_id)%></p>
               <%= link_to like_forum_article_path(@forum.id,@article) , class: "like", method: :put do %>
               <button type="button" class="btn btn-info" aria-label="Left-Align" text-decoration="none">
                 <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -97,7 +95,9 @@
           </div>
         </div>
         <div class="col-sm-7 text-center">
+          <br>
           <h4 class="card-title"><strong>Comentarios</h4></strong>
+          <br>
           <% @comments.each do |comment| %>
 
             <div class="card-text" style="text-align:left;">
