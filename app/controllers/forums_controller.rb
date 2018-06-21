@@ -47,9 +47,13 @@ class ForumsController < ApplicationController
   end
 
   def create
-    @forum = Forum.new(forum_params)
+    @forum = Forum.new(forum_params.except(:email, :forum_id))
     respond_to do |format|
       if @forum.save
+        current_user.forums << @forum
+        a = current_user.admins.find_by_forum_id(@forum.id)
+        a.admin= true
+        a.save
         format.html { redirect_to forum_path(@forum), notice: "Se ha creado con exito el foro"}
       else
         format.html {render :new}
@@ -62,7 +66,11 @@ class ForumsController < ApplicationController
   end
 
   def update
-      if @forum.update(forum_params)
+      if @forum.update(forum_params.except(:email, :forum_id))
+        @user = User.where("email = ?", forum_params[:email])
+        @a = @forum.admins.find_by_user_id(@user)
+        @a.admin = true
+        @a.save
         redirect_to forums_path
       else
         render 'edit'
@@ -78,20 +86,27 @@ class ForumsController < ApplicationController
     @forum = Forum.find(params[:forum_id])
     @user = current_user
     @user.forums << @forum unless @user.forums.include?(@forum)
+    a = current_user.admins.find_by_forum_id(@forum.id)
+    a.subscribe = true
+    a.save
+    #@user.forums << @forum unless @user.forums.include?(@forum)
     redirect_to forum_path(@forum)
   end
 
   def unsuscribe
     @forum = Forum.find(params[:forum_id])
     @user = current_user
-    @user.forums.delete(@forum)
+    a = current_user.admins.find_by_forum_id(@forum.id)
+    a.subscribe = false
+    a.save
+    #@user.forums.delete(@forum)
     redirect_to forum_path(@forum)
   end
 
   private
 
     def forum_params
-      params.require(:forum).permit(:name, :description, :op, :op_id)
+      params.require(:forum).permit(:name, :description, :op, :op_id, :email, :forum_id)
     end
 
     def set_forum

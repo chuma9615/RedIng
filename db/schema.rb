@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180531225803) do
+ActiveRecord::Schema.define(version: 20180615122712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20180531225803) do
     t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "forum_id"
+    t.boolean "subscribe", default: true
+    t.boolean "admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "articles", force: :cascade do |t|
@@ -84,13 +93,6 @@ ActiveRecord::Schema.define(version: 20180531225803) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "forums_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "forum_id", null: false
-    t.index ["forum_id"], name: "index_forums_users_on_forum_id"
-    t.index ["user_id"], name: "index_forums_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

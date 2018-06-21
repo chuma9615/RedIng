@@ -22,7 +22,10 @@
             <br>
           <%= f.text_field :name, :placeholder => "Titulo" %><br><br>
           <%= f.text_field :description, :placeholder => "Cuerpo" %><br><br>
-
+          <%= f.hidden_field :forum_id, value: @forum.id %>
+          <%= f.select  :email, @forum.admins.all.reject{ |p| User.find(p.user_id).email if p.subscribe  == false }.collect{|p| User.find(p.user_id).email}, include_blank: true %>
+          <br>
+          <br>
           <%= f.submit "Listo", class: "btn btn-primary"%>
         <% end %>
       </center>

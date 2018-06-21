@@ -73,21 +73,28 @@
 
       </center>
     <h1>Foro: <%= @forum.name %>
-      <% if !current_user.forums.include?(@forum)%>
+      <% if current_user.admins.find_by_forum_id(@forum.id) == nil %>
       <%= link_to forum_subscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
         <span > Subscribir</span>
       </button>
       <% end%>
+
+      <% elsif current_user.admins.find_by_forum_id(@forum.id).subscribe == false%>
+      <%= link_to forum_subscribe_path(@forum), method: "post" do %>
+      <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
+        <span > Subscribir</span>
+      </button>
       <% end%>
-      <% if current_user.forums.include?(@forum)%>
+      <% elsif current_user.admins.find_by_forum_id(@forum.id).subscribe == true%>
       <%= link_to forum_unsuscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info active custom" aria-label="Left-Align" text-decoration="none">
         <span > Suscrito  </span>
       </button>
       <% end%>
-      <% end%>
     </h1>
+    <% end%>
+
     <h5>Descripción: <%= @forum.description %></h5>
     <h3>Artículos: </h3>
     </center>
@@ -135,8 +142,8 @@
         <span >Volver a Foros</span>
       </button>
       <% end%>
-      <% if current_user %>
-        <% if current_user.email == @forum.op %>
+      <% if @forum.admins.where(:user_id => current_user.id) != nil %>
+        <% if @forum.admins.where(:user_id => current_user.id).where(:forum_id => @forum.id).where(:admin => true).size == 1  %>
           <br>
           <br>
           <%= link_to edit_forum_path(@forum), method: "get" do %>
@@ -144,15 +151,19 @@
             <span >Editar Foro</span>
           </button>
           <% end%>
+          <% end%>
           <br>
           <br>
+          <% if @forum.admins.where(:forum_id => @forum.id).where(:admin => true).size != 1 %>
           <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Foro</span>
           </button>
           <% end%>
+          <% end%>
         <% end%>
-      <% end%>
+
 
     </div>
   </div>
