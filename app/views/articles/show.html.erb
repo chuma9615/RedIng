@@ -59,8 +59,9 @@
 
         <div class="col-sm-5 text-center">
 
+          <br>
           <div class= "card" style="width:320px">
-            <br>
+            <div class="card-block well" style="width:300px">
             <h4 class="card-title"><%= @article.title %></h4>
             <p class="card-text"><i>Creado por <%= link_to @article.op, user_path(@article.op_id)%></i></p>
             <% if @article.img == "" %>
@@ -94,6 +95,8 @@
             </div>
           </div>
         </div>
+
+        </div>
         <div class="col-sm-7 text-center">
           <br>
           <h4 class="card-title"><strong>Comentarios</h4></strong>
@@ -101,6 +104,7 @@
           <% @comments.each do |comment| %>
 
             <div class="card-text" style="text-align:left;">
+
               <% if User.find(comment.op_id).avatar_url == "" %>
               <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png"  class="mr-3 mt-3 rounded-circle" style="width:25px;" >
 
@@ -133,7 +137,6 @@
 
               <div class="dropdown" align= "right">
               <% if current_user %>
-
                 <% if @forum.admins.where(:user_id => current_user.id).where(:forum_id => @forum.id).where(:admin => true).size == 1 %>
                       <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown">
                       <span class="caret"></span></button>

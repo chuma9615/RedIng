@@ -18,7 +18,7 @@
      width: 89px !important;
     }
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 750px}
 
     /* Set gray background color and 100% height */
     .sidenav {
@@ -133,6 +133,7 @@
     <% @articles.each do |article| %>
     <center>
       <div class="card" style="width:400px">
+        <div class="card-block well" style="width:300px">
         <div class="card-body">
           <h4 class="card-title"><strong> <%= link_to article.title, forum_article_path(@forum, article) %></strong></h4>
         </div>
@@ -143,6 +144,7 @@
         <img><%= filepicker_image_tag article.img, { w: 120, h: 120, fit: 'clip'}%>
         <% end %>
       </div>
+    </div>
     </center>
     <% end %>
 

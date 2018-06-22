@@ -5,6 +5,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 </head>
   <title>RED-ING</title>
 </head>
@@ -21,8 +24,9 @@
   <div class="row">
     <center>
     <div class="col-sm-4">
-      <div class="card" style="width:400px">
+      <div class="card" style="width:300px">
         <div class="card-body">
+          <div class="card-block well">
           <% if @user.avatar_url != ""%>
           <%= filepicker_js_include_tag %>
           <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '100', height: '100'%></img>
@@ -46,13 +50,15 @@
         </div>
       </div>
     </div>
+    </div>
   </center>
     <div class="col-sm-8">
       <% @votos.each do |vote| %>
         <% if vote.is_a?(Article)%>
           <% if @user.voted_up_on? vote %>
-
             <% if @user.avatar_url != ""%>
+            <div class="card-block well" style="width:700px">
+
               <div class="media border p-3">
                 <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
                 <div class="media-body">
@@ -60,9 +66,12 @@
                   <p>Le gustó el articulo: <%= vote.title %></p>
                 </div>
               </div>
+            </div>
             <% end %>
 
             <% if @user.avatar_url == ""%>
+            <div class="card-block well" style="width:700px">
+
               <div class="media border p-3">
                   <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
                   <div class="media-body">
@@ -70,10 +79,13 @@
                     <p>Le gustó el articulo: <%= vote.title %></p>
                   </div>
                 </div>
+              </div>
             <% end %>
 
           <% elsif @user.voted_down_on? vote %>
             <% if @user.avatar_url != ""%>
+            <div class="card-block well" style="width:700px">
+
               <div class="media border p-3">
                 <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
                 <div class="media-body">
@@ -81,8 +93,11 @@
                   <p>Le disgustó el articulo: <%= vote.title %></p>
                 </div>
               </div>
+            </div>
             <% end %>
             <% if @user.avatar_url == ""%>
+            <div class="card-block well" style="width:700px">
+
               <div class="media border p-3">
                 <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
                 <div class="media-body">
@@ -90,12 +105,14 @@
                   <p>Le disgustó el articulo: <%= vote.title %></p>
                 </div>
               </div>
+            </div>
             <% end %>
           <% end %>
         <%end%>
         <% if vote.is_a?(Comment)%>
           <% if @user.voted_up_on? vote %>
             <% if @user.avatar_url != ""%>
+            <div class="card-block well" style="width:700px">
                 <div class="media border p-3">
                   <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
                   <div class="media-body">
@@ -103,8 +120,10 @@
                     <p>Le gustó un comentario de: <%= vote.op %></p>
                   </div>
                 </div>
+            </div>
             <% end %>
             <% if @user.avatar_url == ""%>
+            <div class="card-block well" style="width:700px">
               <div class="media border p-3">
                 <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
                 <div class="media-body">
@@ -112,10 +131,13 @@
                   <p>Le gustó un comentario de: <%= vote.op  %></p>
                 </div>
               </div>
+            </div>
             <% end %>
 
           <% elsif @user.voted_down_on? vote %>
             <% if @user.avatar_url != ""%>
+            <div class="card-block well" style="width:700px">
+
               <div class="media border p-3">
                 <img><%= filepicker_image_tag @user.avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
                 <div class="media-body">
@@ -123,8 +145,10 @@
                   <p>Le disgustó un comentario de: <%= vote.op %></p>
                 </div>
               </div>
+            </div>
             <% end %>
             <% if @user.avatar_url == ""%>
+            <div class="card-block well" style="width:700px">
               <div class="media border p-3">
                   <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= @user.first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
                   <div class="media-body">
@@ -132,6 +156,7 @@
                     <p>Le disgustó un comentario de: <%= vote.op  %></p>
                   </div>
                 </div>
+              </div>
             <% end %>
           <% end %>
         <% end %>
