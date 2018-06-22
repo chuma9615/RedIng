@@ -65,9 +65,7 @@
           <p>
         <% end %>
       </center>
-      
-      <br>
-      <br>
+
       <br>
       <h3> Top 3 Voted </h3>
       <% pos = 1 %>
@@ -161,8 +159,8 @@
         <span >Volver a Foros</span>
       </button>
       <% end%>
-      <% if current_user %>
-        <% if current_user.email == @forum.op %>
+      <% if @forum.admins.where(:user_id => current_user.id) != nil %>
+        <% if @forum.admins.where(:user_id => current_user.id).where(:forum_id => @forum.id).where(:admin => true).size == 1  %>
           <br>
           <br>
           <%= link_to edit_forum_path(@forum), method: "get" do %>
@@ -170,17 +168,18 @@
             <span >Editar Foro</span>
           </button>
           <% end%>
+          <% end%>
           <br>
           <br>
           <% if @forum.admins.where(:forum_id => @forum.id).where(:admin => true).size != 1 %>
           <%= link_to borrar_forum_path(@forum), method: "delete" do %>
+
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Foro</span>
           </button>
           <% end%>
           <% end%>
         <% end%>
-      <% end%>
 
     </div>
   </div>

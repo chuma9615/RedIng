@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180615122712) do
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "saved_articles", default: [], array: true
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
