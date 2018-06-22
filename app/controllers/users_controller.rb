@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+before_action :require_user, only: [:artciles]
   def new
     @user = User.new
   end
@@ -32,6 +32,33 @@ class UsersController < ApplicationController
     else
       redirect_to '/signup'
     end
+  end
+
+  def articles
+    if params[:search]
+      @voted_articles = []
+      @votos = current_user.find_voted_items
+      @votos.each do |vote|
+        if vote.is_a?(Article)
+          if current_user.voted_up_on? vote
+              @voted_articles << vote
+          end
+        end
+      end
+      @voted_articles = @voted_articles.select{|a| a.title.include? params[:search]}.paginate(:page => params[:page], :per_page => 6)
+
+    else
+      @votos = current_user.find_voted_items
+      @voted_articles = []
+      @votos.each do |vote|
+        if vote.is_a?(Article)
+          if current_user.voted_up_on? vote
+              @voted_articles << vote
+          end
+        end
+      end
+    end
+    @voted_articles = @voted_articles.paginate(:page => params[:page], :per_page => 6)
   end
 
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<div class="row">
+<div class="col-sm-12">
+<center>
+
+  <h1 class="card-title"><strong>Los Articulos Que Te Gustan</h1></strong>
+
+  <%= form_tag user_articles_path(current_user.id), :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "BUSCAR", :name => nil , class: "btn btn-primary"%>
+    <p>
+  <% end %>
+
+  <div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+
+  <% @voted_articles.each do |vote| %>
+    <center>
+        <div class="card-text" style="text-align:left;">
+          <% if vote.img != "" %>
+          <%= filepicker_js_include_tag %>
+          <img><%= filepicker_image_tag vote.img, { w: 200, h: 200, fit: 'clip'},class:'img-circle',alt: 'Cinque Terre', width: '45', height: '45'%></img>
+          <% elsif vote.img == "" %>
+          <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+          <% end %>
+          <%= link_to vote.title, forum_article_path(vote.forum_id, vote) %>
+          <br>
+          <br>
+
+      </div>
+  </center>
+  <%end%>
+  <center><%= will_paginate @voted_articles%></center>
+
+  </div>
+  <div class="col-sm-4">
+  </div>
+
+</center>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

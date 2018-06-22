@@ -23,7 +23,9 @@
               <% if comment.errors.any? %>
                   <ul>
                   <% comment.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
+                    <div class="alert alert-danger">
+                      <strong>Danger!</strong> <%= message %>
+                    </div>
                   <% end %>
                   </ul>
               <% end %>
