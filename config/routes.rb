@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :articles
   root 'welcome#index'
 
+  resources :users do
+    get 'articles' => 'users#articles'
+  end
+
+
   get 'signup'  => 'users#new'
   resources :users
 

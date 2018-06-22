@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
             <li><a><%= link_to "Inicio", activities_index_path %></a></li>
-            <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown"> Mis Foros<span class="caret"></span></a>
+            <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown">Foros<span class="caret"></span></a>
               <ul class="dropdown-menu">
               <% current_user.forums.each do |f| %>
               <li><a><%= link_to f.name, f %></a></li>
@@ -41,13 +41,21 @@
             </a>
             </li>
 
-            <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown"> Mis Articulos<span class="caret"></span></a>
+            <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown">Articulos<span class="caret"></span></a>
               <ul class="dropdown-menu">
+
+              <% pintados = 0 %>
               <% current_user.find_voted_items.each do |vote| %>
               <% if vote.is_a?(Article)%>
                 <% if current_user.voted_up_on? vote %>
-              <li><a><%= link_to vote.title, forum_article_path(vote.forum_id, vote) %></a></li>
+                  <% pintados = pintados +1 %>
+                  <% if pintados <= 3 %>
+                    <li><a><%= link_to vote.title, forum_article_path(vote.forum_id, vote) %></a></li>
+                  <%end%>
                 <%end%>
+                <%if pintados == 4 %>
+                  <li><a><center><%= link_to "ver más", user_articles_path(current_user.id) %></center></a></li>
+                <% end %>
               <%end%>
               <%end%>
               </ul>

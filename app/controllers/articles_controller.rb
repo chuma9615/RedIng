@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @articles = @forum.articles.all
+    @article_ranking = @articles.order(:cached_votes_score => :desc)
     if params[:search]
       @articles = Article.paginate(:page => params[:page], :per_page => 2).where(['title ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
@@ -28,8 +30,10 @@ class ArticlesController < ApplicationController
   end
 
   def vote_sort
+    @articles = @forum.articles.all
+    @article_ranking = @articles.order(:cached_votes_score => :desc)
     if params[:search]
-      @articles = Article.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2).where(['title ILIKE ?',"%#{params[:search]}%"])
+      @articles = @articles.order(:cached_votes_score => :desc).paginate(:page => params[:page], :per_page => 2).where(['title ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
         format.html
         format.js

@@ -59,6 +59,29 @@
       </button>
       <% end%>
 
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3> Top 3 Voted </h3>
+      <% pos = 1 %>
+      <ul class="list-group">
+      <% @article_ranking.each do |article| %>
+        <% if pos == 1 %>
+
+        <li class="list-group-item" align="left"><img class="card-img-top" src="https://d30y9cdsu7xlg0.cloudfront.net/png/436-200.png" height="20" width="20" alt="Card image" align="left"> <%= link_to article.title, forum_article_path(@forum, article) %><span class="badge"><%=article.votes_for.up.size %></span></li>
+        <% else%>
+        <li class="list-group-item" align="left"><%= pos%> -         <%= link_to article.title, forum_article_path(@forum, article) %><span class="badge"><%=article.votes_for.up.size %></span></li>
+        <%end%>
+        <% pos = pos + 1 %>
+        <% if pos == 4 %>
+          <% break %>
+        <% end %>
+      <% end %>
+      </ul>
+
 
     </div>
     <div class="col-sm-8 text-left">

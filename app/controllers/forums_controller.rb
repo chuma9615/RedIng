@@ -7,6 +7,7 @@ class ForumsController < ApplicationController
   end
 
   def index
+    @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
     if params[:search]
       @forums = Forum.paginate(:page => params[:page], :per_page => 2).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
@@ -25,6 +26,7 @@ class ForumsController < ApplicationController
 
 
   def vote_sort
+    @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
     if params[:search]
       @forums = Forum.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 2).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
