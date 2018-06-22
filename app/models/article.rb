@@ -6,5 +6,9 @@ class Article < ApplicationRecord
   belongs_to :forum
   has_many :comments, dependent: :destroy
   validates :title, :body, presence: true
+  validates :title, length: { maximum: 25,
+    too_long: "%{count} caracteres es lo máximo permitido para el título del artículo." }
+  validates :body, length: { maximum: 100,
+    too_long: "%{count} caracteres es lo máximo permitido para la descripción del artículo." }
 
 end
