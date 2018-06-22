@@ -49,37 +49,37 @@
 
 <div class="container-fluid text-center">
   <div class="row content">
+
     <div class="col-sm-2 sidenav">
       <br>
-
-
       <%= link_to new_forum_article_path do %>
       <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
         <span >Nuevo Articulo</span>
       </button>
       <% end%>
-
-
-    </div>
-    <div class="col-sm-8 text-left">
-    <center>
-      <h1>Todos los Articulos</h1>
-      <%= form_tag forum_articles_path, :method => 'get' do %>
-        <p>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "BUSCAR", :name => nil , class: "btn btn-primary"%>
-        <p>
-      <% end %>
-
+      <br> <br>
+      <center>
+        <h4>Buscar artículos</h4>
+        <%= form_tag forum_articles_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <br> <br>
+            <%= submit_tag "Buscar", :name => nil , class: "btn btn-primary"%>
+          <p>
+        <% end %>
       </center>
-    <h1>Foro: <%= @forum.name %>
+    </div>
+
+    <div class="col-sm-8 text-left">
+
+    <center>
+    <h1><%= @forum.name %>
       <% if current_user.admins.find_by_forum_id(@forum.id) == nil %>
       <%= link_to forum_subscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
         <span > Subscribir</span>
       </button>
       <% end%>
-
       <% elsif current_user.admins.find_by_forum_id(@forum.id).subscribe == false%>
       <%= link_to forum_subscribe_path(@forum), method: "post" do %>
       <button type="button" class="btn btn-info custom" aria-label="Left-Align" text-decoration="none">
@@ -95,48 +95,45 @@
     </h1>
     <% end%>
 
-    <h5>Descripción: <%= @forum.description %></h5>
-    <h3>Artículos: </h3>
+    <h5><i><%= @forum.description %></i></h5>
     </center>
+
+    <h3>Artículos:</h3>
     <div class="btn-group" style="float: right;">
       <%= link_to forum_articles_path(@forum), method: "get" do %>
       <button type="button" class="btn btn-default btn-sm disabled" aria-label="Left-Align" text-decoration="none">
         <span >Time</span>
       </button>
-      <% end%>
+      <% end %>
       <%= link_to vote_sort_forum_article_path(@forum,0), method: "get" do %>
       <button type="button" class="btn btn-default btn-sm" aria-label="Left-Align" text-decoration="none">
         <span >Votes</span>
       </button>
-      <% end%>
+      <% end %>
     </div>
+
     <% @articles.each do |article| %>
     <center>
       <div class="card" style="width:400px">
+        <div class="card-body">
+          <h4 class="card-title"><strong> <%= link_to article.title, forum_article_path(@forum, article) %></strong></h4>
+        </div>
         <% if article.img == "" %>
         <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" height="40" width="40" alt="Card image">
         <% elsif article.img != ""%>
         <%= filepicker_js_include_tag %>
         <img><%= filepicker_image_tag article.img, { w: 120, h: 120, fit: 'clip'}%>
         <% end %>
-
-        <div class="card-body">
-          <h4 class="card-title"><strong>Titulo:</strong> <%= article.title %></h4>
-        </div>
-        <%= link_to 'Ver articulo', forum_article_path(@forum, article) %>
       </div>
     </center>
-      <br>
-      <br>
     <% end %>
+
     <center><%= will_paginate @articles%></center>
 
-    </div>
+  </div>
+
     <div class="col-sm-2 sidenav">
       <br>
-
-
-
       <%= link_to forums_path do %>
       <button type="button" class="btn btn-primary" aria-label="Left-Align" text-decoration="none">
         <span >Volver a Foros</span>
