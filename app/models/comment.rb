@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   acts_as_votable
   validates :content, presence: true
+  validates :content, length: { maximum: 150,
+    too_long: "%{count} caracteres es lo máximo permitido" }
 end

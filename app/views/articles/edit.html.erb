@@ -18,8 +18,6 @@
         <%= form_with(model: [@forum, @article], local: true) do |f|%>
             <br>
             <br>
-            <br>
-            <br>
           <%= f.text_field :title, :placeholder => "Titulo" %><br><br>
           <%= f.text_field :body, :placeholder => "Cuerpo" %><br><br>
           <%= filepicker_js_include_tag %>

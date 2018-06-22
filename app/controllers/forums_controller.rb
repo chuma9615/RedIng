@@ -9,14 +9,14 @@ class ForumsController < ApplicationController
   def index
     @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
     if params[:search]
-      @forums = Forum.paginate(:page => params[:page], :per_page => 2).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
+      @forums = Forum.paginate(:page => params[:page], :per_page => 4).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
         format.html
         format.js
     end
     else
       @forums = Forum.all
-      @forums = @forums.paginate(:page => params[:page], :per_page => 2)
+      @forums = @forums.paginate(:page => params[:page], :per_page => 4)
       respond_to do |format|
         format.html
         format.js
@@ -28,14 +28,14 @@ class ForumsController < ApplicationController
   def vote_sort
     @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
     if params[:search]
-      @forums = Forum.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 2).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
+      @forums = Forum.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 4).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
         format.html
         format.js
     end
     else
       @forums = Forum.all
-      @forums = @forums.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 2)
+      @forums = @forums.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 4)
       respond_to do |format|
         format.html
         format.js
