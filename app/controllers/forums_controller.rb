@@ -38,6 +38,7 @@ class ForumsController < ApplicationController
     else
       @forums = Forum.all
       @forums = Admin.select("forum_id").group(:forum_id).order("count(nullif(subscribe, false)) desc").paginate(:page => params[:page], :per_page => 3)
+
       respond_to do |format|
         format.html
         format.js

@@ -45,6 +45,9 @@
             <p class="recipe-edit">
               <%= link_to "Editar", edit_user_path(@user.id) %>
             </p>
+            <p class="recipe-edit">
+              <%= link_to "Eliminar cuenta", user_path(@user.id), :method => 'delete', data: {confirm: current_user.first_name + ", ¿seguro que quieres eliminar tu cuenta?"} %>
+            </p>
         <% end %>
 
         </div>

@@ -144,7 +144,7 @@
                         <% if current_user.email == comment.op %>
                         <li><%= link_to edit_forum_article_comment_path(@forum, @article, comment), method: "get" do %>Editar<% end%></li>
                         <% end %>
-                        <li><%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete" do %>Borrar<% end%></li>
+                        <li><%= link_to borrar_forum_article_comment_path(@forum, @article, comment), method: "delete", data: {confirm: current_user.first_name + ", ¿seguro que quieres eliminar el comentario?"} do %>Borrar<% end%></li>
                       </ul>
                 <% end%>
               <% end %>
@@ -181,7 +181,7 @@
           <br>
           <br>
           <% if @forum.admins.where(:user_id => current_user.id).where(:forum_id => @forum.id).where(:admin => true).size == 1 %>
-          <%= link_to borrar_forum_article_path(@forum, @article), method: "delete" do %>
+          <%= link_to borrar_forum_article_path(@forum, @article), method: "delete", data: {confirm: current_user.first_name + ", ¿seguro que quieres eliminar el artículo?"} do %>
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Articulo</span>
           </button>

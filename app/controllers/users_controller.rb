@@ -24,6 +24,18 @@ before_action :require_user, only: [:artciles]
       end
   end
 
+  def destroy
+     @user = User.find(params[:id])
+     @user.forums.each do |f|
+       if Admin.select('forum_id').where('forum_id = ?',f.id).count == 1
+           redirect_to forum_path(f.id)
+           return
+       end
+     @user.destroy
+     end
+     redirect_to '/'
+   end
+
   def create
     @user = User.new(user_params)
     if @user.save
