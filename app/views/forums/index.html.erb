@@ -15,7 +15,7 @@
     }
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 650px}
 
     /* Set gray background color and 100% height */
     .sidenav {
@@ -55,6 +55,25 @@
           <%= submit_tag "BUSCAR", :name => nil , class: "btn btn-primary"%>
         <p>
       <% end %>
+      <h3> Top 3 Seguidos</h3>
+
+      <% pos = 1 %>
+      <ul class="list-group">
+      <% @ranking.each do |a| %>
+        <% foro = Forum.find(a[0]) %>
+        <%suscritos = a[1] %>
+        <% if pos == 1 %>
+
+        <li class="list-group-item" align="left"><img class="card-img-top" src="https://d30y9cdsu7xlg0.cloudfront.net/png/436-200.png" height="20" width="20" alt="Card image" align="left"> <%= link_to foro.name, forum_path(foro) %><span class="badge"><%=suscritos %></span></li>
+        <% else%>
+        <li class="list-group-item" align="left"><%= pos%> -         <%= link_to foro.name, forum_path(foro) %><span class="badge"><%=suscritos %></span></li>
+        <%end%>
+        <% pos = pos + 1 %>
+        <% if pos == 4 %>
+          <% break %>
+        <% end %>
+      <% end %>
+      </ul>
     </div>
 
     <div class="col-sm-8 text-left">
