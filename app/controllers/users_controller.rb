@@ -33,6 +33,7 @@ before_action :require_user, only: [:artciles]
        end
      @user.destroy
      end
+     reset_session
      redirect_to '/'
    end
 
