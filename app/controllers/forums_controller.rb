@@ -7,26 +7,28 @@ class ForumsController < ApplicationController
   end
 
   def index
-    @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
+    @ranking = Admin.select("forum_id").group(:forum_id).order("count(nullif(subscribe, false)) desc").count( "nullif(subscribe, false)")
+
     if params[:search]
       @forums = Forum.paginate(:page => params[:page], :per_page => 3).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
         format.html
         format.js
-    end
+      end
     else
       @forums = Forum.all
       @forums = @forums.paginate(:page => params[:page], :per_page => 3)
       respond_to do |format|
         format.html
         format.js
-    end
+      end
     end
   end
 
 
   def vote_sort
-    @ranking = Forum.all.sort_by{|f| f[:users.size]}.reverse
+    @ranking = Admin.select("forum_id").group(:forum_id).order("count(nullif(subscribe, false)) desc").count( "nullif(subscribe, false)")
+
     if params[:search]
       @forums = Forum.sort_by{|f| f[:users.size]}.reverse.paginate(:page => params[:page], :per_page => 3).where(['lower(name) ILIKE ?',"%#{params[:search]}%"])
       respond_to do |format|
@@ -35,7 +37,7 @@ class ForumsController < ApplicationController
     end
     else
       @forums = Forum.all
-      @forums = @forums.sort_by{|f| f[:subscribe.size]}.reverse.paginate(:page => params[:page], :per_page => 3)
+      @forums = Admin.select("forum_id").group(:forum_id).order("count(nullif(subscribe, false)) desc").paginate(:page => params[:page], :per_page => 3)
       respond_to do |format|
         format.html
         format.js
@@ -88,6 +90,9 @@ class ForumsController < ApplicationController
     @forum = Forum.find(params[:forum_id])
     @user = current_user
     @user.forums << @forum unless @user.forums.include?(@forum)
+
+    #Agregué está para podeer contar cuantos subscripptores tiene
+    #@forum.users << @user unless @forum.forums.include?(@user)
     a = current_user.admins.find_by_forum_id(@forum.id)
     a.subscribe = true
     a.save
@@ -101,6 +106,9 @@ class ForumsController < ApplicationController
     a = current_user.admins.find_by_forum_id(@forum.id)
     a.subscribe = false
     a.save
+    # Esto es para restar los no suscritos
+    #@forum.users.delete(current_user)
+    current_user.forums.delete(@forum)
     #@user.forums.delete(@forum)
     redirect_to forum_path(@forum)
   end
