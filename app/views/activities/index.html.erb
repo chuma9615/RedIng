@@ -46,6 +46,7 @@
   <% activity = tupla[1] %>
   <% article = tupla[0] %>
     <% if User.find(article.op_id).avatar_url == "" %>
+  <div class="card-block well" style="width:450px">
     <div class="media border p-3">
       <img src="https://aumentada.net/wp-content/uploads/2015/05/user.png" alt= "<%= User.find(activity.owner_id).first_name%>" class="mr-3 mt-3 rounded-circle" style="width:40px;">
       <div class="media-body">
@@ -53,7 +54,10 @@
         <p>Ha creado el articulo <%= link_to article.title, forum_article_path( article.forum_id , article) %> en el foro <%=link_to activity.trackable.name, activity.trackable %> de <%=link_to User.find(activity.owner_id).email, user_path(activity.owner_id)  %></p>
       </div>
     </div>
+  </div>
     <% elsif  User.find(article.op_id).avatar_url != "" %>
+  <div class="card-block well" style="width:450px">
+
     <div class="media border p-3">
       <img><%= filepicker_image_tag User.find(article.op_id).avatar_url, { w: 200, h: 200, fit: 'clip'}, class: 'img-circle',alt: 'Cinque Terre', width: '50', height: '50'%>
       <div class="media-body">
@@ -61,6 +65,7 @@
         <p>Ha creado el articulo <%= link_to article.title, forum_article_path( article.forum_id , article) %> en el foro <%=link_to activity.trackable.name, activity.trackable %> </p>
       </div>
     </div>
+  </div>
     <% end %>
 
 <%end%>

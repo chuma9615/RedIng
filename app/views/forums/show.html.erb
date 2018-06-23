@@ -96,12 +96,10 @@
           <% end%>
           <br>
           <br>
-          <% if @forum.admins.where(:forum_id => @forum.id).where(:admin => true).size != 1 %>
           <%= link_to borrar_forum_path(@forum), method: "delete" do %>
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Foro</span>
           </button>
-          <% end%>
           <% end%>
         <% end%>
       <% end %>

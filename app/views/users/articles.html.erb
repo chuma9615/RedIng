@@ -25,6 +25,7 @@
   <% @voted_articles.each do |vote| %>
     <center>
         <div class="card-text" style="text-align:left;">
+          <div class="card-block well" style="width:300px">
           <% if vote.img != "" %>
           <%= filepicker_js_include_tag %>
           <img><%= filepicker_image_tag vote.img, { w: 200, h: 200, fit: 'clip'},class:'img-circle',alt: 'Cinque Terre', width: '45', height: '45'%></img>
@@ -32,9 +33,7 @@
           <img class="card-img-top" src="http://ku.90sjimg.com/element_origin_min_pic/01/40/42/75573cfd6bcd61c.jpg" class="mr-3 mt-3 rounded-circle" style="width:45px;">
           <% end %>
           <%= link_to vote.title, forum_article_path(vote.forum_id, vote) %>
-          <br>
-          <br>
-
+          </div>
       </div>
   </center>
   <%end%>
