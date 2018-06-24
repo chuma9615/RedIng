@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # use HTTParty
+gem 'httparty','~> 0.16.2'
 
 gem 'public_activity'
 
