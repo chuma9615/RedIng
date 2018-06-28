@@ -182,10 +182,8 @@
             <span >Editar Articulo</span>
           </button>
           <% end%>
-          <% end %>
           <br>
           <br>
-          <% if @forum.admins.where(:user_id => current_user.id).where(:forum_id => @forum.id).where(:admin => true).size == 1 %>
           <%= link_to borrar_forum_article_path(@forum, @article), method: "delete", data: {confirm: current_user.first_name + ", ¿seguro que quieres eliminar el artículo?"} do %>
           <button type="button" class="btn btn-danger" aria-label="Left-Align" text-decoration="none">
             <span >Eliminar Articulo</span>
