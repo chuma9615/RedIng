@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   acts_as_follower
 
-  has_many :admins
+  has_many :admins, dependent: :destroy
   has_many :forums, through: :admins
 
 
