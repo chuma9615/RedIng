@@ -37,17 +37,23 @@ before_action :require_user, only: [:artciles]
          @foru.update(:op => @user2.email, :op_id => @user2.id )
        end
      end
+
      acts = PublicActivity::Activity.where(owner_id: @user.id, owner_type: "User")
-     acts.delete_all
-     art = Article.find_by_op(@user.email)
-     if art != nil
-       art.destroy
+     if acts != nil
+       acts.delete_all
      end
 
-     com = Comment.find_by_op(@user.email)
+     com = Comment.where(op: @user.email)
      if com != nil
-       com.destroy
+       com.destroy_all
      end
+
+     art = Article.where(op: @user.email)
+     if art != nil
+       art.destroy_all
+     end
+
+
 
      @user.destroy
      reset_session
