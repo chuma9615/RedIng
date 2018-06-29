@@ -97,6 +97,14 @@ before_action :require_user, only: [:artciles]
     @voted_articles = @voted_articles.paginate(:page => params[:page], :per_page => 6)
   end
 
+  def foros
+    @voted_foros = current_user.forums
+    if params[:search]
+      @voted_foros = @voted_foros.select{|a| a.name.include? params[:search]}.paginate(:page => params[:page], :per_page => 6)
+    end
+    @voted_foros = @voted_foros.paginate(:page => params[:page], :per_page => 6)
+  end
+
 
   private
   def user_params

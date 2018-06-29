@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users do
     get 'articles' => 'users#articles'
+    get 'foros' => 'users#foros'
   end
 
 

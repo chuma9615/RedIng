@@ -47,7 +47,19 @@ ActsAsVotable::Vote.create!([
   {votable_type: "Article", votable_id: 4, voter_type: "User", voter_id: 2, vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_type: "Article", votable_id: 6, voter_type: "User", voter_id: 2, vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_type: "Article", votable_id: 7, voter_type: "User", voter_id: 2, vote_flag: false, vote_scope: nil, vote_weight: 1},
-  {votable_type: "Article", votable_id: 8, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1}
+  {votable_type: "Article", votable_id: 8, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 2, voter_type: "User", voter_id: 1, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Comment", votable_id: 2, voter_type: "User", voter_id: 1, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 3, voter_type: "User", voter_id: 1, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 9, voter_type: "User", voter_id: 1, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 10, voter_type: "User", voter_id: 1, vote_flag: false, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Comment", votable_id: 4, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 11, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 3, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 6, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 5, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 7, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_type: "Article", votable_id: 2, voter_type: "User", voter_id: 3, vote_flag: true, vote_scope: nil, vote_weight: 1}
 ])
 
 PublicActivity::ORM::ActiveRecord::Activity.create!([
@@ -78,5 +90,24 @@ PublicActivity::ORM::ActiveRecord::Activity.create!([
   {trackable_type: "Comment", trackable_id: 5, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
   {trackable_type: "Comment", trackable_id: 6, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
   {trackable_type: "Comment", trackable_id: 3, owner_type: nil, owner_id: nil, key: "comment.update", parameters: {}, recipient_type: nil, recipient_id: nil},
-  {trackable_type: "Comment", trackable_id: 7, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil}
+  {trackable_type: "Comment", trackable_id: 7, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 2, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 3, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Comment", trackable_id: 8, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 9, owner_type: nil, owner_id: nil, key: "article.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Comment", trackable_id: 9, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 9, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Forum", trackable_id: 5, owner_type: "User", owner_id: 1, key: "forum.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 10, owner_type: nil, owner_id: nil, key: "article.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 10, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Comment", trackable_id: 10, owner_type: nil, owner_id: nil, key: "comment.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Forum", trackable_id: 6, owner_type: "User", owner_id: 3, key: "forum.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 11, owner_type: nil, owner_id: nil, key: "article.create", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 11, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 3, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 8, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 6, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 5, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 7, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil},
+  {trackable_type: "Article", trackable_id: 2, owner_type: nil, owner_id: nil, key: "article.update", parameters: {}, recipient_type: nil, recipient_id: nil}
 ])

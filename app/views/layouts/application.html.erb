@@ -34,8 +34,17 @@
             <li><a><%= link_to "Inicio", activities_index_path %></a></li>
             <li class="dropdown"><a><a class="dropdown-toggle" data-toggle="dropdown">Foros<span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <% current_user.forums.each do |f| %>
-              <li><a><%= link_to f.name, f %></a></li>
+              <% pintados = 0 %>
+
+              <% current_user.forums.each do |vote| %>
+
+                <% pintados = pintados +1 %>
+                <% if pintados <= 3 %>
+                  <li><a><%= link_to vote.name, vote %></a></li>
+                <%end%>
+                <%if pintados == 4 %>
+                  <li><a><center><%= link_to "ver más", user_foros_path(current_user.id) %></center></a></li>
+                <% end %>
               <%end%>
               </ul>
             </a>
