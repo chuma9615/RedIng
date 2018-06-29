@@ -127,7 +127,7 @@
 
                 <%= link_to dislike_forum_article_comment_path(@forum.id,@article, comment) , class: "like", method: :put do %>
                 <button type="button"  class="btn btn-info btn-xs" aria-label="Left-Align" text-decoration="none">
-                  <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
                   <span > </span>
                   <span class="badge"> <%= comment.get_downvotes.size%> </span>
                   <span > </span>

@@ -27,7 +27,7 @@ before_action :require_user, only: [:artciles]
   def destroy
      @user = User.find(params[:id])
      @user.forums.each do |f|
-       if f.admins.where(:forum_id => f.id).where(:admin => true).where('user_id != ?',@user.id).size == 0 
+       if f.admins.where(:forum_id => f.id).where(:admin => true).where('user_id != ?',@user.id).size == 0
            redirect_to forum_path(f.id)
            return
        elsif true
@@ -37,16 +37,20 @@ before_action :require_user, only: [:artciles]
          @foru.update(:op => @user2.email, :op_id => @user2.id )
        end
      end
+     
      acts = PublicActivity::Activity.where(owner_id: @user.id, owner_type: "User")
-     acts.delete_all
-     art = Article.find_by_op(@user.email)
-     if art != nil
-       art.destroy
+     if acts != nil
+       acts.delete_all
      end
 
-     com = Comment.find_by_op(@user.email)
+     art = Article.where(op: @user.email)
+     if art != nil
+       art.delete_all
+     end
+
+     com = Comment.where(op: @user.email)
      if com != nil
-       com.destroy
+       com.delete_all
      end
 
      @user.destroy
