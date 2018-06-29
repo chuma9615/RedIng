@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<div class="row">
+<div class="col-sm-12">
+<center>
+
+  <h1 class="card-title"><strong>Los Foros Que Sigues</h1></strong>
+
+  <%= form_tag user_articles_path(current_user.id), :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "BUSCAR", :name => nil , class: "btn btn-primary"%>
+    <p>
+  <% end %>
+
+  <div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+
+  <% @voted_foros.each do |vote| %>
+    <center>
+        <div class="card-text" style="text-align:left;">
+          <div class="card-block well" style="width:300px">
+          <%= link_to vote.name, vote %>
+          </div>
+      </div>
+  </center>
+  <%end%>
+  <center><%= will_paginate @voted_foros%></center>
+
+  </div>
+  <div class="col-sm-4">
+  </div>
+
+</center>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

@@ -27,7 +27,7 @@ before_action :require_user, only: [:artciles]
   def destroy
      @user = User.find(params[:id])
      @user.forums.each do |f|
-       if f.admins.where(:forum_id => f.id).where(:admin => true).where('user_id != ?',@user.id).size == 0 
+       if f.admins.where(:forum_id => f.id).where(:admin => true).where('user_id != ?',@user.id).size == 0
            redirect_to forum_path(f.id)
            return
        elsif true
@@ -89,6 +89,14 @@ before_action :require_user, only: [:artciles]
       end
     end
     @voted_articles = @voted_articles.paginate(:page => params[:page], :per_page => 6)
+  end
+
+  def foros
+    @voted_foros = current_user.forums
+    if params[:search]
+      @voted_foros = @voted_foros.select{|a| a.name.include? params[:search]}.paginate(:page => params[:page], :per_page => 6)
+    end
+    @voted_foros = @voted_foros.paginate(:page => params[:page], :per_page => 6)
   end
 
 
